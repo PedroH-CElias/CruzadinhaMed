@@ -1,0 +1,25 @@
+{
+  "expo": {
+    "name": "CruzadinhaMed",
+    "slug": "cruzadinhamed",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "scheme": "cruzadinhamed",
+    "splash": {
+      "backgroundColor": "#0E1330"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#0E1330"
+      }
+    },
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}
