@@ -3,6 +3,7 @@ package com.cruzadinha.med.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -13,13 +14,16 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.cruzadinha.med.dto.UserDTO;
+import com.cruzadinha.med.dto.UserInsertDTO;
 import com.cruzadinha.med.dto.UserPasswordChangeDTO;
 import com.cruzadinha.med.dto.UserProfileUpdateDTO;
 import com.cruzadinha.med.entities.Role;
 import com.cruzadinha.med.entities.User;
 import com.cruzadinha.med.projections.UserDetailsProjection;
+import com.cruzadinha.med.repositories.RoleRepository;
 import com.cruzadinha.med.repositories.UserRepository;
 
 
@@ -30,7 +34,12 @@ public class UserService implements UserDetailsService {
 	private UserRepository repository;
 
 	@Autowired
+	private RoleRepository roleRepository;
+
+	@Autowired
 	private PasswordEncoder passwordEncoder;
+
+	private static final String DEFAULT_ROLE = "ROLE_PLAYER";
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -82,6 +91,27 @@ public class UserService implements UserDetailsService {
 
 	private UsernameNotFoundException newUsernameNotFoundException() {
 		return new UsernameNotFoundException("User not found");
+	}
+
+	// Cadastro público de novo jogador
+	@Transactional
+	public UserDTO insert(UserInsertDTO dto) {
+		String email = dto.getEmail().trim().toLowerCase();
+		if (repository.findByEmail(email).isPresent()) {
+			throw new ResponseStatusException(HttpStatus.CONFLICT, "E-mail já cadastrado");
+		}
+
+		Role role = roleRepository.findByAuthority(DEFAULT_ROLE)
+				.orElseThrow(() -> new IllegalStateException("Perfil " + DEFAULT_ROLE + " não encontrado no banco"));
+
+		User user = new User();
+		user.setName(dto.getName().trim());
+		user.setEmail(email);
+		user.setPassword(encryptPassword(dto.getPassword()));
+		user.addRole(role);
+
+		user = save(user);
+		return new UserDTO(user);
 	}
 
 	@Transactional
