@@ -6,12 +6,12 @@
  * 6 a 72 caracteres. Depois de cadastrar, o usuário já entra na conta.
  */
 import React, { useRef, useState } from 'react';
-import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { View, Text, Pressable, StyleSheet, Linking } from 'react-native';
 import AuthScreenLayout from './AuthScreenLayout';
 import FormInput from '../components/FormInput';
 import PrimaryButton from '../components/PrimaryButton';
 import { useAuth } from '../context/AuthContext';
-import { getErrorMessage } from '../services/api';
+import { getErrorMessage, LEGAL_URLS } from '../services/api';
 import { theme } from '../theme';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -146,6 +146,19 @@ export default function RegisterScreen({ navigation }) {
 
       {formError ? <Text style={styles.formError}>{formError}</Text> : null}
 
+      {/* Aviso legal: ao criar a conta o usuário aceita os Termos e a Política (exigido pelas lojas) */}
+      <Text style={styles.legal}>
+        Ao criar uma conta, você concorda com os{' '}
+        <Text style={styles.legalLink} onPress={() => Linking.openURL(LEGAL_URLS.terms)} accessibilityRole="link">
+          Termos de Uso
+        </Text>{' '}
+        e a{' '}
+        <Text style={styles.legalLink} onPress={() => Linking.openURL(LEGAL_URLS.privacy)} accessibilityRole="link">
+          Política de Privacidade
+        </Text>
+        .
+      </Text>
+
       <PrimaryButton title="Criar conta" onPress={handleSubmit} loading={loading} style={styles.submit} />
 
       <View style={styles.switchRow}>
@@ -168,6 +181,14 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   submit: { marginTop: 4 },
+  legal: {
+    color: theme.colors.textMuted,
+    fontSize: 13,
+    lineHeight: 19,
+    textAlign: 'center',
+    marginBottom: 14,
+  },
+  legalLink: { color: theme.colors.primary, fontWeight: '700' },
   switchRow: {
     flexDirection: 'row',
     justifyContent: 'center',

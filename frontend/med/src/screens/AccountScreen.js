@@ -6,12 +6,12 @@
  * disponível dentro do app. Ela pede a senha como confirmação e é definitiva.
  */
 import React, { useEffect, useState } from 'react';
-import { View, Text, Pressable, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, Pressable, ScrollView, StyleSheet, Linking } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import FormInput from '../components/FormInput';
 import PrimaryButton from '../components/PrimaryButton';
 import { useAuth } from '../context/AuthContext';
-import { getErrorMessage } from '../services/api';
+import { getErrorMessage, LEGAL_URLS } from '../services/api';
 import { theme } from '../theme';
 
 export default function AccountScreen({ navigation }) {
@@ -147,6 +147,17 @@ export default function AccountScreen({ navigation }) {
             </View>
           )}
         </View>
+
+        {/* Documentos legais (abrem no navegador) */}
+        <View style={styles.legalRow}>
+          <Pressable onPress={() => Linking.openURL(LEGAL_URLS.privacy)} hitSlop={8} accessibilityRole="link">
+            <Text style={styles.legalLink}>Política de Privacidade</Text>
+          </Pressable>
+          <Text style={styles.legalDot}>·</Text>
+          <Pressable onPress={() => Linking.openURL(LEGAL_URLS.terms)} hitSlop={8} accessibilityRole="link">
+            <Text style={styles.legalLink}>Termos de Uso</Text>
+          </Pressable>
+        </View>
       </ScrollView>
     </View>
   );
@@ -202,4 +213,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   formError: { color: theme.colors.error, fontSize: 14, textAlign: 'center', marginBottom: 12 },
+  legalRow: { flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: 28 },
+  legalLink: { color: theme.colors.textMuted, fontSize: 13, textDecorationLine: 'underline' },
+  legalDot: { color: theme.colors.textMuted, marginHorizontal: 10 },
 });

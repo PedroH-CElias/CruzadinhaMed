@@ -38,6 +38,22 @@ function resolveApiUrl() {
 
 export const API_URL = resolveApiUrl();
 
+// Nas versões de loja o Android e o iOS bloqueiam http://. Em produção a API precisa de HTTPS,
+// configurado via EXPO_PUBLIC_API_URL (ver .env.example).
+if (!__DEV__ && API_URL.startsWith('http://')) {
+  console.warn(`[api] A API está em HTTP (${API_URL}). Builds de produção exigem HTTPS.`);
+}
+
+/**
+ * Páginas legais públicas, servidas pelo backend (pasta static/).
+ * As lojas pedem esses links no cadastro do app, e o app os mostra no cadastro e em Minha conta.
+ */
+export const LEGAL_URLS = {
+  privacy: `${API_URL}/politica-de-privacidade.html`,
+  terms: `${API_URL}/termos-de-uso.html`,
+  deleteAccount: `${API_URL}/excluir-conta.html`,
+};
+
 /**
  * Erro padronizado das chamadas à API.
  * status = código HTTP, ou 0 quando não foi possível falar com o servidor (sem rede,

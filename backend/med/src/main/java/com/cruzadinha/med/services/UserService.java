@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -176,7 +175,8 @@ public class UserService implements UserDetailsService {
 		final String newPassword = dto.getNewPassword();
 
 		if (!passwordEncoder.matches(currentPassword, user.getPassword())) {
-			throw new BadCredentialsException("Senha atual incorreta");
+			// 422 e não 401: um 401 faria o app achar que a sessão expirou e deslogar o usuário
+			throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, "Senha atual incorreta");
 		}
 
 		user.setPassword(encryptPassword(newPassword));
