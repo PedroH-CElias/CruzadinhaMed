@@ -53,6 +53,21 @@ CREATE TABLE tb_password_reset (
   used_at    TIMESTAMP(6) WITH TIME ZONE
 );
 
+-- Progresso do usuario em cada cruzadinha (uma linha por usuario e cruzadinha)
+CREATE TABLE tb_puzzle_progress (
+  id           BIGSERIAL PRIMARY KEY,
+  user_id      BIGINT NOT NULL REFERENCES tb_user(id),
+  puzzle_id    VARCHAR(64) NOT NULL,
+  cells        VARCHAR(4000) NOT NULL,
+  solved_words INTEGER NOT NULL,
+  total_words  INTEGER NOT NULL,
+  hints_used   INTEGER NOT NULL,
+  completed    BOOLEAN NOT NULL,
+  completed_at TIMESTAMP(6) WITH TIME ZONE,
+  updated_at   TIMESTAMP(6) WITH TIME ZONE NOT NULL,
+  CONSTRAINT uk_puzzle_progress_user_puzzle UNIQUE (user_id, puzzle_id)
+);
+
 -- Perfis iniciais (novos cadastros recebem ROLE_PLAYER)
 INSERT INTO tb_role (authority) VALUES ('ROLE_EMPLOYEE');
 INSERT INTO tb_role (authority) VALUES ('ROLE_ADMIN');

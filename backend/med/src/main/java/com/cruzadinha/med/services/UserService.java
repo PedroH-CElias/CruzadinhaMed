@@ -24,6 +24,7 @@ import com.cruzadinha.med.entities.Role;
 import com.cruzadinha.med.entities.User;
 import com.cruzadinha.med.projections.UserDetailsProjection;
 import com.cruzadinha.med.repositories.PasswordResetCodeRepository;
+import com.cruzadinha.med.repositories.PuzzleProgressRepository;
 import com.cruzadinha.med.repositories.RefreshTokenRepository;
 import com.cruzadinha.med.repositories.RoleRepository;
 import com.cruzadinha.med.repositories.UserRepository;
@@ -43,6 +44,9 @@ public class UserService implements UserDetailsService {
 
 	@Autowired
 	private PasswordResetCodeRepository passwordResetCodeRepository;
+
+	@Autowired
+	private PuzzleProgressRepository puzzleProgressRepository;
 
 	@Autowired
 	private PasswordEncoder passwordEncoder;
@@ -77,7 +81,9 @@ public class UserService implements UserDetailsService {
 	}
 
 	// Criado para retornar o usuário logado, caso contrário, ex.
-	protected User authenticated() {
+	// Público para outros serviços (ex.: ProgressService) obterem o usuário logado.
+	// Métodos protected/package em beans com proxy (@Transactional) podem não ser repassados ao objeto real.
+	public User authenticated() {
 		// Pega um objeto caso tiver no contexto do springSecurity
 		try {
 			Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -129,10 +135,10 @@ public class UserService implements UserDetailsService {
 	 * A senha é pedida de novo como confirmação. Senha errada responde 422, e não 401,
 	 * para o app não confundir com sessão expirada.
 	 *
-	 * Ordem da exclusão: sessões e códigos de redefinição primeiro (dependem do usuário),
-	 * depois o usuário. Os vínculos em tb_user_role são removidos junto com ele pelo JPA.
-	 * Quando existirem outros dados ligados ao usuário (ex.: progresso no jogo), eles
-	 * também precisam ser apagados aqui.
+	 * Ordem da exclusão: sessões, códigos de redefinição e progresso no jogo primeiro
+	 * (dependem do usuário), depois o usuário. Os vínculos em tb_user_role são removidos
+	 * junto com ele pelo JPA. Qualquer tabela nova ligada ao usuário também precisa ser
+	 * apagada aqui.
 	 */
 	@Transactional
 	public void deleteMe(UserDeleteDTO dto) {
@@ -144,6 +150,7 @@ public class UserService implements UserDetailsService {
 
 		refreshTokenRepository.deleteAllByUser(user.getId());
 		passwordResetCodeRepository.deleteAllByUser(user.getId());
+		puzzleProgressRepository.deleteAllByUser(user.getId());
 		repository.delete(user);
 	}
 

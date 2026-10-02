@@ -270,6 +270,54 @@ export function resetPassword({ email, code, newPassword }) {
 }
 
 // ---------------------------------------------------------------------------
+// Progresso nas cruzadinhas
+// ---------------------------------------------------------------------------
+
+/** Converte o progresso do formato do app para o da API (as letras viajam como texto JSON). */
+function progressToServer(record) {
+  return {
+    puzzleId: record.puzzleId,
+    cells: JSON.stringify(record.cells ?? {}),
+    solvedWords: record.solvedWords ?? 0,
+    totalWords: record.totalWords ?? 0,
+    hintsUsed: record.hintsUsed ?? 0,
+    completed: !!record.completed,
+    completedAt: record.completedAt ?? null,
+    updatedAt: record.updatedAt,
+  };
+}
+
+/** Converte o progresso recebido da API para o formato do app. */
+function progressFromServer(dto) {
+  let cells = {};
+  try {
+    cells = JSON.parse(dto.cells || '{}');
+  } catch {
+    // Texto inválido: começa a cruzadinha vazia em vez de quebrar o app
+  }
+  return { ...dto, cells };
+}
+
+/** Baixa todo o progresso do usuário logado. */
+export async function getProgress() {
+  const list = await request('/progress', { auth: true });
+  return (list ?? []).map(progressFromServer);
+}
+
+/**
+ * Envia um lote de progresso. O backend junta com o que já tem e devolve a lista
+ * completa e atualizada de todas as cruzadinhas do usuário.
+ */
+export async function syncProgress(records) {
+  const list = await request('/progress', {
+    method: 'PUT',
+    body: { items: records.map(progressToServer) },
+    auth: true,
+  });
+  return (list ?? []).map(progressFromServer);
+}
+
+// ---------------------------------------------------------------------------
 // Mensagens de erro para as telas
 // ---------------------------------------------------------------------------
 

@@ -6,6 +6,7 @@ import {
   getCategory,
   getPuzzlesByCategory,
 } from '../data/puzzles';
+import { useProgress } from '../context/ProgressContext';
 import { theme } from '../theme';
 
 export default function LevelsScreen({ route, navigation }) {
@@ -13,6 +14,7 @@ export default function LevelsScreen({ route, navigation }) {
   const category = getCategory(categoryId);
   const puzzles = getPuzzlesByCategory(categoryId);
   const insets = useSafeAreaInsets();
+  const { progress } = useProgress();
 
   return (
     <View style={[styles.container, { paddingTop: insets.top + 8 }]}>
@@ -41,24 +43,36 @@ export default function LevelsScreen({ route, navigation }) {
               </View>
 
               <View style={styles.grid}>
-                {levels.map((p) => (
-                  <Pressable
-                    key={p.id}
-                    style={({ pressed }) => [
-                      styles.levelCard,
-                      { borderColor: diff.color + '55' },
-                      pressed && { opacity: 0.85 },
-                    ]}
-                    onPress={() => navigation.navigate('Game', { id: p.id })}
-                  >
-                    <Text style={[styles.levelNum, { color: diff.color }]}>
-                      {p.level}
-                    </Text>
-                    <Text style={styles.levelSub}>
-                      {p.entries.length} palavras
-                    </Text>
-                  </Pressable>
-                ))}
+                {levels.map((p) => {
+                  // Situação do nível: concluído, em andamento ou não iniciado
+                  const record = progress[p.id];
+                  const done = !!record?.completed;
+                  const started = !done && (record?.solvedWords ?? 0) > 0;
+                  const subtitle = done
+                    ? '✓ Concluída'
+                    : started
+                    ? `${record.solvedWords}/${p.entries.length} palavras`
+                    : `${p.entries.length} palavras`;
+
+                  return (
+                    <Pressable
+                      key={p.id}
+                      style={({ pressed }) => [
+                        styles.levelCard,
+                        { borderColor: done ? theme.colors.solvedBorder : diff.color + '55' },
+                        pressed && { opacity: 0.85 },
+                      ]}
+                      onPress={() => navigation.navigate('Game', { id: p.id })}
+                    >
+                      <Text style={[styles.levelNum, { color: diff.color }]}>
+                        {p.level}
+                      </Text>
+                      <Text style={[styles.levelSub, done && styles.levelDone]}>
+                        {subtitle}
+                      </Text>
+                    </Pressable>
+                  );
+                })}
               </View>
             </View>
           );
@@ -104,4 +118,5 @@ const styles = StyleSheet.create({
   },
   levelNum: { fontSize: 30, fontWeight: '900' },
   levelSub: { color: theme.colors.textMuted, fontSize: 12, marginTop: 4 },
+  levelDone: { color: theme.colors.solved, fontWeight: '700' },
 });

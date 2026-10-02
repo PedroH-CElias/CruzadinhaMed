@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, Pressable, StyleSheet, ScrollView } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { CATEGORIES, getPuzzlesByCategory } from '../data/puzzles';
+import { useProgress } from '../context/ProgressContext';
 import { theme } from '../theme';
 
 const ICONS = {
@@ -13,6 +14,7 @@ const ICONS = {
 
 export default function CategoriesScreen({ navigation }) {
   const insets = useSafeAreaInsets();
+  const { progress } = useProgress();
 
   return (
     <View style={[styles.container, { paddingTop: insets.top + 8 }]}>
@@ -29,7 +31,10 @@ export default function CategoriesScreen({ navigation }) {
         showsVerticalScrollIndicator={false}
       >
         {CATEGORIES.map((c) => {
-          const count = getPuzzlesByCategory(c.id).length;
+          const puzzles = getPuzzlesByCategory(c.id);
+          const count = puzzles.length;
+          // Quantas cruzadinhas desta categoria já foram concluídas
+          const done = puzzles.filter((p) => progress[p.id]?.completed).length;
           return (
             <Pressable
               key={c.id}
@@ -41,7 +46,7 @@ export default function CategoriesScreen({ navigation }) {
               </View>
               <View style={{ flex: 1 }}>
                 <Text style={styles.cardTitle}>{c.name}</Text>
-                <Text style={styles.cardSub}>{count} cruzadinhas · 3 níveis</Text>
+                <Text style={styles.cardSub}>{done} de {count} concluídas · 3 níveis</Text>
               </View>
               <View style={[styles.play, { backgroundColor: c.color }]}>
                 <Text style={styles.playText}>›</Text>

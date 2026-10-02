@@ -15,6 +15,7 @@ import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
 import ResetPasswordScreen from './src/screens/ResetPasswordScreen';
 import AccountScreen from './src/screens/AccountScreen';
 import { AuthProvider, useAuth } from './src/context/AuthContext';
+import { ProgressProvider, useProgress } from './src/context/ProgressContext';
 import { theme } from './src/theme';
 
 const Stack = createNativeStackNavigator();
@@ -28,7 +29,10 @@ export default function App() {
     <SafeAreaProvider>
       <StatusBar style="light" />
       <AuthProvider>
-        <RootNavigator />
+        {/* O progresso depende da sessão (convidado ou conta), por isso fica dentro do AuthProvider */}
+        <ProgressProvider>
+          <RootNavigator />
+        </ProgressProvider>
       </AuthProvider>
     </SafeAreaProvider>
   );
@@ -40,9 +44,10 @@ export default function App() {
  */
 function RootNavigator() {
   const { status } = useAuth();
+  const { ready: progressReady } = useProgress();
 
-  // Enquanto tenta restaurar a sessão salva, mostra só um indicador de carregamento
-  if (status === 'loading') {
+  // Enquanto restaura a sessão salva e carrega o progresso do aparelho, mostra só um indicador
+  if (status === 'loading' || !progressReady) {
     return (
       <View style={{ flex: 1, backgroundColor: theme.colors.bg, alignItems: 'center', justifyContent: 'center' }}>
         <ActivityIndicator size="large" color={theme.colors.primary} />

@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useCallback } from 'react';
+import React, { useMemo, useState, useCallback, useEffect, useRef } from 'react';
 import {
   View,
   Text,
@@ -18,7 +18,20 @@ import {
 } from '../engine';
 import CrosswordGrid from '../components/CrosswordGrid';
 import Keyboard from '../components/Keyboard';
+import { useProgress } from '../context/ProgressContext';
 import { theme } from '../theme';
+
+/**
+ * Filtra as letras salvas, mantendo só células que existem nesta cruzadinha e com uma
+ * letra de A a Z. Protege contra progresso antigo caso o conteúdo da cruzadinha mude.
+ */
+function sanitizeCells(cells, board) {
+  const clean = {};
+  Object.entries(cells ?? {}).forEach(([key, letter]) => {
+    if (board.cells[key] && typeof letter === 'string' && /^[A-Z]$/.test(letter)) clean[key] = letter;
+  });
+  return clean;
+}
 
 export default function GameScreen({ route, navigation }) {
   const { id } = route.params;
@@ -32,7 +45,11 @@ export default function GameScreen({ route, navigation }) {
     Math.min(40, Math.floor((width - 16) / board.cols) - 2)
   );
 
-  const [values, setValues] = useState({});
+  // Progresso salvo: a cruzadinha abre de onde o jogador parou
+  const { progress, saveProgress } = useProgress();
+  const saved = progress[id];
+  const [values, setValues] = useState(() => sanitizeCells(saved?.cells, board));
+  const [hintsUsed, setHintsUsed] = useState(saved?.hintsUsed ?? 0);
   const [activeNumber, setActiveNumber] = useState(board.across[0]?.number ?? board.down[0]?.number);
   const [dir, setDir] = useState(board.across.length ? 'across' : 'down');
   const [cellIndex, setCellIndex] = useState(0);
@@ -47,6 +64,24 @@ export default function GameScreen({ route, navigation }) {
 
   const solvedCount = countSolved(board, values);
   const solved = isBoardSolved(board, values);
+
+  // Salva o progresso a cada alteração (letras ou dicas). Pula a primeira renderização,
+  // que só exibe o que já estava salvo.
+  const isFirstRender = useRef(true);
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+    saveProgress(id, {
+      cells: values,
+      solvedWords: solvedCount,
+      totalWords: board.entries.length,
+      hintsUsed,
+      completed: solved,
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [values, hintsUsed]);
 
   // Células que fazem parte de uma palavra já completada corretamente.
   const solvedCells = useMemo(() => {
@@ -128,6 +163,8 @@ export default function GameScreen({ route, navigation }) {
 
   const revealWord = () => {
     if (!activeEntry) return;
+    // Só conta como dica se a palavra ainda não estava certa
+    if (!isEntrySolved(activeEntry, values)) setHintsUsed((h) => h + 1);
     const updates = {};
     cellsForEntry(activeEntry).forEach((c, i) => {
       updates[`${c.row}-${c.col}`] = activeEntry.answer[i];
@@ -136,6 +173,13 @@ export default function GameScreen({ route, navigation }) {
   };
 
   const entrySolved = activeEntry && isEntrySolved(activeEntry, values);
+
+  /** Limpa o tabuleiro para jogar de novo. O selo de "concluída" é mantido no progresso. */
+  const restart = () => {
+    setValues({});
+    const first = board.across[0] ?? board.down[0];
+    if (first) selectEntry(first, 0);
+  };
 
   return (
     <View style={[styles.container, { paddingTop: insets.top + 6 }]}>
@@ -148,6 +192,7 @@ export default function GameScreen({ route, navigation }) {
           <Text style={styles.progress}>
             {puzzle.difficultyName} · Nível {puzzle.level} · {solvedCount}/
             {board.entries.length}
+            {saved?.completed ? ' · ✓' : ''}
           </Text>
         </View>
         <Pressable onPress={revealWord} hitSlop={12}>
@@ -192,12 +237,17 @@ export default function GameScreen({ route, navigation }) {
       {solved ? (
         <View style={styles.doneBanner}>
           <Text style={styles.doneTitle}>🎉 Cruzadinha concluída!</Text>
-          <Pressable
-            style={styles.doneBtn}
-            onPress={() => navigation.navigate('Categories')}
-          >
-            <Text style={styles.doneBtnText}>Escolher outra</Text>
-          </Pressable>
+          <View style={styles.doneActions}>
+            <Pressable style={styles.restartBtn} onPress={restart}>
+              <Text style={styles.restartBtnText}>Recomeçar</Text>
+            </Pressable>
+            <Pressable
+              style={styles.doneBtn}
+              onPress={() => navigation.navigate('Categories')}
+            >
+              <Text style={styles.doneBtnText}>Escolher outra</Text>
+            </Pressable>
+          </View>
         </View>
       ) : (
         <View style={styles.clueBar}>
@@ -283,4 +333,13 @@ const styles = StyleSheet.create({
     borderRadius: theme.radius.md,
   },
   doneBtnText: { color: '#fff', fontWeight: '700', fontSize: 15 },
+  doneActions: { flexDirection: 'row', gap: 10 },
+  restartBtn: {
+    borderWidth: 1,
+    borderColor: theme.colors.cardBorder,
+    paddingHorizontal: 18,
+    paddingVertical: 10,
+    borderRadius: theme.radius.md,
+  },
+  restartBtnText: { color: theme.colors.text, fontWeight: '700', fontSize: 15 },
 });
