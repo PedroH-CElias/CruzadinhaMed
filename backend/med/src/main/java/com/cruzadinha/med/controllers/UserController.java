@@ -7,6 +7,7 @@ import java.net.URI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.cruzadinha.med.dto.UserDTO;
+import com.cruzadinha.med.dto.UserDeleteDTO;
 import com.cruzadinha.med.dto.UserInsertDTO;
 import com.cruzadinha.med.dto.UserPasswordChangeDTO;
 import com.cruzadinha.med.dto.UserProfileUpdateDTO;
@@ -53,6 +55,14 @@ public class UserController {
 		return ResponseEntity.ok(userDto);
 	}
 	
+	// Exclui definitivamente a conta do usuário logado (pede a senha como confirmação)
+	@PreAuthorize(HAS_ANY_ROLE_ALL)
+	@DeleteMapping(value = "/me")
+	public ResponseEntity<Void> deleteMe(@Valid @RequestBody UserDeleteDTO dto) {
+		service.deleteMe(dto);
+		return ResponseEntity.noContent().build();
+	}
+
 	@PreAuthorize(HAS_ANY_ROLE_ALL)
 	@PatchMapping(value = "/me/password")
 	public ResponseEntity<Void> changePassword(@Valid @RequestBody UserPasswordChangeDTO dto) {

@@ -77,6 +77,24 @@ export function AuthProvider({ children }) {
     becomeGuest();
   }, [becomeGuest]);
 
+  /** Exclui a conta (confirmando com a senha) e volta para o modo convidado. */
+  const deleteAccount = useCallback(
+    async (password) => {
+      await api.deleteAccount(password);
+      becomeGuest();
+    },
+    [becomeGuest]
+  );
+
+  /** Redefine a senha com o código recebido por e-mail e já entra com a nova senha. */
+  const resetPassword = useCallback(
+    async ({ email, code, newPassword }) => {
+      await api.resetPassword({ email, code, newPassword });
+      await signIn(email, newPassword);
+    },
+    [signIn]
+  );
+
   const value = useMemo(
     () => ({
       status,
@@ -85,8 +103,10 @@ export function AuthProvider({ children }) {
       signIn,
       signUp,
       signOut,
+      deleteAccount,
+      resetPassword,
     }),
-    [status, user, signIn, signUp, signOut]
+    [status, user, signIn, signUp, signOut, deleteAccount, resetPassword]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

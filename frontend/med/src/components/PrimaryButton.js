@@ -6,7 +6,8 @@
  * - onPress:  ação ao tocar;
  * - loading:  mostra um indicador de carregamento e bloqueia novos toques;
  * - disabled: desabilita o botão;
- * - variant:  'primary' (fundo azul, padrão) ou 'ghost' (só texto, para ações secundárias).
+ * - variant:  'primary' (fundo azul, padrão), 'danger' (fundo vermelho, ações destrutivas)
+ *             ou 'ghost' (só texto, para ações secundárias).
  */
 import React from 'react';
 import { Pressable, Text, ActivityIndicator, StyleSheet } from 'react-native';
@@ -31,7 +32,7 @@ export default function PrimaryButton({
       accessibilityState={{ disabled: blocked, busy: loading }}
       style={({ pressed }) => [
         styles.base,
-        isGhost ? styles.ghost : styles.primary,
+        isGhost ? styles.ghost : variant === 'danger' ? styles.danger : styles.primary,
         pressed && !blocked && { opacity: 0.85 },
         blocked && !loading && { opacity: 0.5 },
         style,
@@ -55,6 +56,7 @@ const styles = StyleSheet.create({
     minHeight: 54,
   },
   primary: { backgroundColor: theme.colors.primary },
+  danger: { backgroundColor: theme.colors.error },
   ghost: { backgroundColor: 'transparent' },
   text: { color: '#fff', fontSize: 17, fontWeight: '800' },
   ghostText: { color: theme.colors.textMuted, fontSize: 15, fontWeight: '700' },

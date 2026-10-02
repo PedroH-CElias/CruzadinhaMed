@@ -31,6 +31,7 @@ import com.cruzadinha.med.entities.Role;
 import com.cruzadinha.med.entities.User;
 import com.cruzadinha.med.repositories.RefreshTokenRepository;
 import com.cruzadinha.med.repositories.UserRepository;
+import com.cruzadinha.med.security.LoginAttemptService;
 
 /**
  * Regras de autenticação do app: login, renovação de sessão e logout.
@@ -75,6 +76,9 @@ public class AuthService {
 	@Autowired
 	private JwtEncoder jwtEncoder;
 
+	@Autowired
+	private LoginAttemptService loginAttemptService;
+
 	/** Validade do token de acesso, em segundos (padrão: 900 = 15 minutos). */
 	@Value("${security.jwt.access-token-duration}")
 	private long accessTokenSeconds;
@@ -88,21 +92,29 @@ public class AuthService {
 	 *
 	 * @throws ResponseStatusException 401 se o e-mail não existir ou a senha estiver errada
 	 *         (mesma mensagem nos dois casos, de propósito)
+	 * @throws ResponseStatusException 429 se o e-mail estiver bloqueado por excesso de senhas erradas
 	 */
 	@Transactional
 	public TokenResponseDTO login(LoginRequestDTO dto) {
 		String email = dto.getEmail().trim().toLowerCase();
+
+		// Bloqueio temporário após várias senhas erradas (ver LoginAttemptService)
+		loginAttemptService.checkAllowed(email);
+
 		Optional<User> user = userRepository.findByEmail(email);
 
 		if (user.isEmpty()) {
 			// Compara com um hash falso só para gastar o mesmo tempo de um login real
 			passwordEncoder.matches(dto.getPassword(), DUMMY_PASSWORD_HASH);
+			loginAttemptService.recordFailure(email);
 			throw unauthorized(INVALID_CREDENTIALS);
 		}
 		if (!passwordEncoder.matches(dto.getPassword(), user.get().getPassword())) {
+			loginAttemptService.recordFailure(email);
 			throw unauthorized(INVALID_CREDENTIALS);
 		}
 
+		loginAttemptService.recordSuccess(email);
 		return issueTokens(user.get(), Instant.now());
 	}
 

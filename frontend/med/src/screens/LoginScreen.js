@@ -50,7 +50,12 @@ export default function LoginScreen({ navigation }) {
       await signIn(email, password);
       close();
     } catch (error) {
-      setFormError(getErrorMessage(error, { 401: 'E-mail ou senha inválidos.' }));
+      setFormError(
+        getErrorMessage(error, {
+          401: 'E-mail ou senha inválidos.',
+          429: 'Muitas tentativas de login. Aguarde alguns minutos ou redefina sua senha.',
+        })
+      );
       setLoading(false);
     }
   }
@@ -98,6 +103,16 @@ export default function LoginScreen({ navigation }) {
         editable={!loading}
       />
 
+      <Pressable
+        style={styles.forgot}
+        onPress={() => navigation.navigate('ForgotPassword', { email: email.trim() })}
+        disabled={loading}
+        hitSlop={8}
+        accessibilityRole="link"
+      >
+        <Text style={styles.forgotText}>Esqueci minha senha</Text>
+      </Pressable>
+
       {formError ? <Text style={styles.formError}>{formError}</Text> : null}
 
       <PrimaryButton title="Entrar" onPress={handleSubmit} loading={loading} style={styles.submit} />
@@ -115,6 +130,8 @@ export default function LoginScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
+  forgot: { alignSelf: 'flex-end', marginTop: -6, marginBottom: 16 },
+  forgotText: { color: theme.colors.primary, fontSize: 14, fontWeight: '700' },
   formError: {
     color: theme.colors.error,
     fontSize: 14,

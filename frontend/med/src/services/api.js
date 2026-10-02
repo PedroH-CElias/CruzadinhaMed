@@ -225,6 +225,34 @@ export function getMe() {
   return request('/users/me', { auth: true });
 }
 
+/**
+ * Exclui definitivamente a conta do usuário logado. A senha é pedida como confirmação:
+ * senha errada gera ApiError 422. Em caso de sucesso, os tokens locais são apagados.
+ */
+export async function deleteAccount(password) {
+  await request('/users/me', { method: 'DELETE', body: { password }, auth: true });
+  await clearTokens();
+}
+
+/**
+ * Pede um código de redefinição de senha por e-mail. O servidor responde igual
+ * existindo ou não a conta, então esta função não indica se o e-mail está cadastrado.
+ */
+export function forgotPassword(email) {
+  return request('/auth/forgot-password', {
+    method: 'POST',
+    body: { email: email.trim().toLowerCase() },
+  });
+}
+
+/** Troca a senha usando o código de 6 dígitos. Código errado ou expirado gera ApiError 422. */
+export function resetPassword({ email, code, newPassword }) {
+  return request('/auth/reset-password', {
+    method: 'POST',
+    body: { email: email.trim().toLowerCase(), code: code.trim(), newPassword },
+  });
+}
+
 // ---------------------------------------------------------------------------
 // Mensagens de erro para as telas
 // ---------------------------------------------------------------------------

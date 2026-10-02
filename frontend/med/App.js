@@ -11,6 +11,9 @@ import LevelsScreen from './src/screens/LevelsScreen';
 import GameScreen from './src/screens/GameScreen';
 import LoginScreen from './src/screens/LoginScreen';
 import RegisterScreen from './src/screens/RegisterScreen';
+import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
+import ResetPasswordScreen from './src/screens/ResetPasswordScreen';
+import AccountScreen from './src/screens/AccountScreen';
 import { AuthProvider, useAuth } from './src/context/AuthContext';
 import { theme } from './src/theme';
 
@@ -60,11 +63,14 @@ function RootNavigator() {
         <Stack.Screen name="Categories" component={CategoriesScreen} />
         <Stack.Screen name="Levels" component={LevelsScreen} />
         <Stack.Screen name="Game" component={GameScreen} />
+        <Stack.Screen name="Account" component={AccountScreen} />
 
         {/* Telas de autenticação, abertas como modal por cima do jogo */}
         <Stack.Group screenOptions={{ presentation: 'modal', animation: 'slide_from_bottom' }}>
           <Stack.Screen name="Login" component={LoginScreen} />
           <Stack.Screen name="Register" component={RegisterScreen} />
+          <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
+          <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} />
         </Stack.Group>
       </Stack.Navigator>
     </NavigationContainer>

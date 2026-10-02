@@ -17,12 +17,15 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.cruzadinha.med.dto.UserDTO;
+import com.cruzadinha.med.dto.UserDeleteDTO;
 import com.cruzadinha.med.dto.UserInsertDTO;
 import com.cruzadinha.med.dto.UserPasswordChangeDTO;
 import com.cruzadinha.med.dto.UserProfileUpdateDTO;
 import com.cruzadinha.med.entities.Role;
 import com.cruzadinha.med.entities.User;
 import com.cruzadinha.med.projections.UserDetailsProjection;
+import com.cruzadinha.med.repositories.PasswordResetCodeRepository;
+import com.cruzadinha.med.repositories.RefreshTokenRepository;
 import com.cruzadinha.med.repositories.RoleRepository;
 import com.cruzadinha.med.repositories.UserRepository;
 
@@ -35,6 +38,12 @@ public class UserService implements UserDetailsService {
 
 	@Autowired
 	private RoleRepository roleRepository;
+
+	@Autowired
+	private RefreshTokenRepository refreshTokenRepository;
+
+	@Autowired
+	private PasswordResetCodeRepository passwordResetCodeRepository;
 
 	@Autowired
 	private PasswordEncoder passwordEncoder;
@@ -112,6 +121,31 @@ public class UserService implements UserDetailsService {
 
 		user = save(user);
 		return new UserDTO(user);
+	}
+
+	/**
+	 * Exclui definitivamente a conta do usuário logado (exigência da Apple e do Google Play,
+	 * e direito do titular pela LGPD).
+	 *
+	 * A senha é pedida de novo como confirmação. Senha errada responde 422, e não 401,
+	 * para o app não confundir com sessão expirada.
+	 *
+	 * Ordem da exclusão: sessões e códigos de redefinição primeiro (dependem do usuário),
+	 * depois o usuário. Os vínculos em tb_user_role são removidos junto com ele pelo JPA.
+	 * Quando existirem outros dados ligados ao usuário (ex.: progresso no jogo), eles
+	 * também precisam ser apagados aqui.
+	 */
+	@Transactional
+	public void deleteMe(UserDeleteDTO dto) {
+		User user = authenticated();
+
+		if (!passwordEncoder.matches(dto.getPassword(), user.getPassword())) {
+			throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, "Senha incorreta");
+		}
+
+		refreshTokenRepository.deleteAllByUser(user.getId());
+		passwordResetCodeRepository.deleteAllByUser(user.getId());
+		repository.delete(user);
 	}
 
 	@Transactional

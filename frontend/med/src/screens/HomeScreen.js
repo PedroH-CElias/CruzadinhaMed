@@ -19,9 +19,18 @@ export default function HomeScreen({ navigation }) {
       <View style={styles.topBar}>
         {isAuthenticated ? (
           <>
-            <Text style={styles.greeting} numberOfLines={1}>
-              Olá, {firstName}
-            </Text>
+            {/* Tocar na saudação abre a tela "Minha conta" */}
+            <Pressable
+              style={styles.greetingButton}
+              onPress={() => navigation.navigate('Account')}
+              hitSlop={8}
+              accessibilityRole="button"
+              accessibilityLabel="Abrir minha conta"
+            >
+              <Text style={styles.greeting} numberOfLines={1}>
+                Olá, {firstName} <Text style={styles.greetingChevron}>›</Text>
+              </Text>
+            </Pressable>
             <Pressable onPress={signOut} hitSlop={10} accessibilityRole="button">
               <Text style={styles.signOut}>Sair</Text>
             </Pressable>
@@ -106,7 +115,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     minHeight: 36,
   },
-  greeting: { color: theme.colors.text, fontSize: 16, fontWeight: '700', flex: 1, marginRight: 12 },
+  greetingButton: { flex: 1, marginRight: 12 },
+  greeting: { color: theme.colors.text, fontSize: 16, fontWeight: '700' },
+  greetingChevron: { color: theme.colors.primary, fontWeight: '900' },
   signOut: { color: theme.colors.textMuted, fontSize: 15, fontWeight: '700' },
   signInPill: {
     backgroundColor: theme.colors.card,

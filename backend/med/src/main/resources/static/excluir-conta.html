@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+  Página pública de exclusão de conta do CruzadinhaMed.
+  Endereço: https://<seu-dominio>/excluir-conta.html
+
+  O Google Play exige um link na web onde o usuário possa pedir a exclusão da conta
+  (campo "Delete account URL" do formulário de Segurança dos dados).
+  TODO: trocar o e-mail de contato abaixo pelo e-mail oficial de suporte antes de publicar.
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Excluir conta - CruzadinhaMed</title>
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      margin: 0; padding: 32px 16px;
+      background: #0E1330; color: #F4F6FF;
+      font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    main { max-width: 640px; margin: 0 auto; }
+    .brand { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+    .badge {
+      width: 44px; height: 44px; border-radius: 14px; background: #4F7CFF;
+      display: grid; place-items: center; font-size: 28px; font-weight: 900; color: #fff;
+    }
+    h1 { font-size: 28px; margin: 0 0 8px; }
+    h2 { font-size: 19px; margin: 28px 0 8px; }
+    p, li { color: #C9CEEA; }
+    .card {
+      background: #1D2450; border: 1px solid #2A3266; border-radius: 14px;
+      padding: 16px 20px; margin-top: 12px;
+    }
+    a { color: #7FA0FF; }
+    footer { margin-top: 40px; font-size: 13px; color: #9AA3D0; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="brand"><div class="badge">+</div><strong>CruzadinhaMed</strong></div>
+
+    <h1>Excluir sua conta</h1>
+    <p>Você pode excluir sua conta do CruzadinhaMed a qualquer momento. A exclusão é definitiva.</p>
+
+    <h2>Pelo aplicativo (mais rápido)</h2>
+    <div class="card">
+      <ol>
+        <li>Abra o CruzadinhaMed e entre na sua conta.</li>
+        <li>Na tela inicial, toque em <strong>“Olá, seu nome”</strong> para abrir <strong>Minha conta</strong>.</li>
+        <li>Toque em <strong>Excluir conta</strong>, confirme com sua senha e pronto.</li>
+      </ol>
+    </div>
+
+    <h2>Sem acesso ao aplicativo</h2>
+    <div class="card">
+      <p>Envie um e-mail para
+        <a href="mailto:suporte@cruzadinhamed.com.br?subject=Excluir%20minha%20conta">suporte@cruzadinhamed.com.br</a>
+        com o assunto <strong>“Excluir minha conta”</strong>, a partir do mesmo e-mail cadastrado.
+        Atendemos o pedido em até 15 dias.</p>
+    </div>
+
+    <h2>O que é apagado</h2>
+    <ul>
+      <li>Seus dados de cadastro: nome, e-mail e senha (criptografada).</li>
+      <li>Suas sessões abertas e códigos de redefinição de senha.</li>
+      <li>Seu progresso no jogo vinculado à conta.</li>
+    </ul>
+    <p>Não mantemos cópias desses dados depois da exclusão, exceto quando a lei exigir.</p>
+
+    <footer>CruzadinhaMed · Aprenda medicina resolvendo palavras cruzadas.</footer>
+  </main>
+</body>
+</html>
