@@ -3,6 +3,8 @@ import { View, Text, Pressable, StyleSheet, ScrollView } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { CATEGORIES, getPuzzlesByCategory } from '../data/puzzles';
 import { useProgress } from '../context/ProgressContext';
+import { useAuth } from '../context/AuthContext';
+import { canPlayPuzzle } from '../config/access';
 import { theme } from '../theme';
 
 const ICONS = {
@@ -15,6 +17,7 @@ const ICONS = {
 export default function CategoriesScreen({ navigation }) {
   const insets = useSafeAreaInsets();
   const { progress } = useProgress();
+  const { user } = useAuth();
 
   return (
     <View style={[styles.container, { paddingTop: insets.top + 8 }]}>
@@ -35,6 +38,9 @@ export default function CategoriesScreen({ navigation }) {
           const count = puzzles.length;
           // Quantas cruzadinhas desta categoria já foram concluídas
           const done = puzzles.filter((p) => progress[p.id]?.completed).length;
+          // Quantas o usuário pode jogar (grátis ou todas, se for Premium)
+          const available = puzzles.filter((p) => canPlayPuzzle(p, user)).length;
+          const accessLabel = available === count ? 'todas liberadas' : `${available} grátis`;
           return (
             <Pressable
               key={c.id}
@@ -46,7 +52,7 @@ export default function CategoriesScreen({ navigation }) {
               </View>
               <View style={{ flex: 1 }}>
                 <Text style={styles.cardTitle}>{c.name}</Text>
-                <Text style={styles.cardSub}>{done} de {count} concluídas · 3 níveis</Text>
+                <Text style={styles.cardSub}>{done} de {count} concluídas · {accessLabel}</Text>
               </View>
               <View style={[styles.play, { backgroundColor: c.color }]}>
                 <Text style={styles.playText}>›</Text>

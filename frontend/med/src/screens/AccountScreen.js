@@ -12,6 +12,7 @@ import FormInput from '../components/FormInput';
 import PrimaryButton from '../components/PrimaryButton';
 import { useAuth } from '../context/AuthContext';
 import { getErrorMessage, LEGAL_URLS } from '../services/api';
+import { hasPremium } from '../config/access';
 import { theme } from '../theme';
 
 export default function AccountScreen({ navigation }) {
@@ -32,6 +33,12 @@ export default function AccountScreen({ navigation }) {
   }, [isAuthenticated, navigation]);
 
   if (!user) return <View style={styles.container} />;
+
+  // Situação da assinatura Premium (vem do backend em /users/me)
+  const premiumActive = hasPremium(user);
+  const premiumUntil = user.premiumUntil
+    ? new Date(user.premiumUntil).toLocaleDateString('pt-BR')
+    : null;
 
   async function handleSignOut() {
     setSigningOut(true);
@@ -85,6 +92,25 @@ export default function AccountScreen({ navigation }) {
             <Text style={styles.email} numberOfLines={1}>{user.email}</Text>
           </View>
         </View>
+
+        {/* Assinatura */}
+        <Pressable
+          style={[styles.planCard, !premiumActive && styles.planInactive]}
+          onPress={premiumActive ? undefined : () => navigation.navigate('Premium')}
+          disabled={premiumActive}
+          accessibilityRole={premiumActive ? undefined : 'button'}
+        >
+          <Text style={styles.planTitle}>
+            {premiumActive ? 'Premium ativo' : 'Assinatura inativa'}
+          </Text>
+          <Text style={styles.planText}>
+            {premiumActive
+              ? premiumUntil
+                ? `Válido até ${premiumUntil}.`
+                : 'Todas as cruzadinhas liberadas.'
+              : 'Você tem acesso só às cruzadinhas grátis. Toque para renovar.'}
+          </Text>
+        </Pressable>
 
         <PrimaryButton
           title="Sair da conta"
@@ -197,6 +223,20 @@ const styles = StyleSheet.create({
   name: { color: theme.colors.text, fontSize: 18, fontWeight: '800' },
   email: { color: theme.colors.textMuted, fontSize: 14, marginTop: 2 },
   signOut: { marginBottom: 28 },
+  planCard: {
+    borderRadius: theme.radius.md,
+    borderWidth: 1,
+    borderColor: theme.colors.solvedBorder + '88',
+    backgroundColor: theme.colors.solved + '1A',
+    padding: 14,
+    marginBottom: 16,
+  },
+  planInactive: {
+    borderColor: theme.colors.error + '66',
+    backgroundColor: theme.colors.error + '14',
+  },
+  planTitle: { color: theme.colors.text, fontSize: 15, fontWeight: '800' },
+  planText: { color: theme.colors.textMuted, fontSize: 13, marginTop: 4 },
   dangerCard: {
     borderRadius: theme.radius.lg,
     borderWidth: 1,

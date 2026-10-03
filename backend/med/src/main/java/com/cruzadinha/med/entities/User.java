@@ -1,5 +1,6 @@
 package com.cruzadinha.med.entities;
 
+import java.time.Instant;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Objects;
@@ -35,6 +36,13 @@ public class User implements UserDetails { // Interface que possui métodos de v
 	@Column(unique = true)
     private String email;
     private String password;
+
+	/**
+	 * Até quando a assinatura Premium está paga. null = nunca assinou.
+	 * Hoje é preenchido manualmente (import.sql / banco); quando a compra pela loja
+	 * existir, será atualizado a partir da confirmação da App Store / Google Play.
+	 */
+	private Instant premiumUntil;
 
 	@ManyToMany
 	@JoinTable(name = "tb_user_role", //
@@ -102,6 +110,19 @@ public class User implements UserDetails { // Interface que possui métodos de v
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public Instant getPremiumUntil() {
+		return premiumUntil;
+	}
+
+	public void setPremiumUntil(Instant premiumUntil) {
+		this.premiumUntil = premiumUntil;
+	}
+
+	/** A assinatura Premium está ativa agora? */
+	public boolean isPremium() {
+		return premiumUntil != null && Instant.now().isBefore(premiumUntil);
 	}
 
 	public Set<Role> getRoles() {

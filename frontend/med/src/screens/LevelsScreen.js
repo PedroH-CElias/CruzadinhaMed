@@ -6,7 +6,10 @@ import {
   getCategory,
   getPuzzlesByCategory,
 } from '../data/puzzles';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useProgress } from '../context/ProgressContext';
+import { useAuth } from '../context/AuthContext';
+import { canPlayPuzzle } from '../config/access';
 import { theme } from '../theme';
 
 export default function LevelsScreen({ route, navigation }) {
@@ -15,6 +18,7 @@ export default function LevelsScreen({ route, navigation }) {
   const puzzles = getPuzzlesByCategory(categoryId);
   const insets = useSafeAreaInsets();
   const { progress } = useProgress();
+  const { user } = useAuth();
 
   return (
     <View style={[styles.container, { paddingTop: insets.top + 8 }]}>
@@ -44,6 +48,28 @@ export default function LevelsScreen({ route, navigation }) {
 
               <View style={styles.grid}>
                 {levels.map((p) => {
+                  // Cruzadinha Premium para quem não assina: aparece com cadeado
+                  if (!canPlayPuzzle(p, user)) {
+                    return (
+                      <Pressable
+                        key={p.id}
+                        style={({ pressed }) => [
+                          styles.levelCard,
+                          styles.lockedCard,
+                          pressed && { opacity: 0.85 },
+                        ]}
+                        onPress={() => navigation.navigate('Premium')}
+                        accessibilityLabel={`Nível ${p.level}, exclusivo Premium`}
+                      >
+                        <Text style={[styles.levelNum, styles.lockedNum]}>{p.level}</Text>
+                        <View style={styles.lockedRow}>
+                          <MaterialCommunityIcons name="lock-outline" size={14} color={theme.colors.textMuted} />
+                          <Text style={[styles.levelSub, { marginTop: 0 }]}>Premium</Text>
+                        </View>
+                      </Pressable>
+                    );
+                  }
+
                   // Situação do nível: concluído, em andamento ou não iniciado
                   const record = progress[p.id];
                   const done = !!record?.completed;
@@ -119,4 +145,7 @@ const styles = StyleSheet.create({
   levelNum: { fontSize: 30, fontWeight: '900' },
   levelSub: { color: theme.colors.textMuted, fontSize: 12, marginTop: 4 },
   levelDone: { color: theme.colors.solved, fontWeight: '700' },
+  lockedCard: { borderColor: theme.colors.cardBorder, opacity: 0.75 },
+  lockedNum: { color: theme.colors.textMuted },
+  lockedRow: { flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 4 },
 });

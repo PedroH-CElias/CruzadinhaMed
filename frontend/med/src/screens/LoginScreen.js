@@ -63,7 +63,7 @@ export default function LoginScreen({ navigation }) {
   return (
     <AuthScreenLayout
       title="Entrar"
-      subtitle="Salve seu progresso e continue de onde parou em qualquer aparelho."
+      subtitle="Entre com a conta da sua assinatura Premium."
       onClose={close}
     >
       <FormInput
@@ -117,10 +117,11 @@ export default function LoginScreen({ navigation }) {
 
       <PrimaryButton title="Entrar" onPress={handleSubmit} loading={loading} style={styles.submit} />
 
+      {/* Não há "Criar conta": só assinantes Premium têm conta (ver tela Premium) */}
       <View style={styles.switchRow}>
-        <Text style={styles.switchText}>Não tem conta? </Text>
-        <Pressable onPress={() => navigation.replace('Register')} disabled={loading} hitSlop={8}>
-          <Text style={styles.switchLink}>Criar conta</Text>
+        <Text style={styles.switchText}>Ainda não assina? </Text>
+        <Pressable onPress={() => navigation.replace('Premium')} disabled={loading} hitSlop={8}>
+          <Text style={styles.switchLink}>Conheça o Premium</Text>
         </Pressable>
       </View>
 

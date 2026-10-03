@@ -14,6 +14,7 @@ import RegisterScreen from './src/screens/RegisterScreen';
 import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
 import ResetPasswordScreen from './src/screens/ResetPasswordScreen';
 import AccountScreen from './src/screens/AccountScreen';
+import PremiumScreen from './src/screens/PremiumScreen';
 import { AuthProvider, useAuth } from './src/context/AuthContext';
 import { ProgressProvider, useProgress } from './src/context/ProgressContext';
 import { theme } from './src/theme';
@@ -76,6 +77,7 @@ function RootNavigator() {
           <Stack.Screen name="Register" component={RegisterScreen} />
           <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
           <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} />
+          <Stack.Screen name="Premium" component={PremiumScreen} />
         </Stack.Group>
       </Stack.Navigator>
     </NavigationContainer>

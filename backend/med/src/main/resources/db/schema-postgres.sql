@@ -16,7 +16,9 @@ CREATE TABLE tb_user (
   cpf      VARCHAR(255),
   phone    VARCHAR(255),
   email    VARCHAR(255) UNIQUE,
-  password VARCHAR(255)
+  password VARCHAR(255),
+  -- Validade da assinatura Premium (NULL = nunca assinou)
+  premium_until TIMESTAMP(6) WITH TIME ZONE
 );
 
 -- Perfis de acesso

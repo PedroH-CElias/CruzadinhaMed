@@ -1,5 +1,6 @@
 package com.cruzadinha.med.controllers;
 
+import static com.cruzadinha.med.utils.AuthorizationUtils.HAS_ANY_ROLE_ADMIM;
 import static com.cruzadinha.med.utils.AuthorizationUtils.HAS_ANY_ROLE_ALL;
 
 import java.net.URI;
@@ -32,7 +33,13 @@ public class UserController {
 	@Autowired
 	private UserService service;
 
-	// Cadastro público de novo jogador (não exige token)
+	/*
+	 * Cadastro de usuário.
+	 * REGRA DE NEGÓCIO: só assinantes Premium têm conta. Enquanto a compra da assinatura
+	 * não existir, o cadastro fica FECHADO ao público: apenas um ADMIN consegue criar contas.
+	 * Quando o fluxo de compra existir, a conta passará a ser criada junto com a assinatura.
+	 */
+	@PreAuthorize(HAS_ANY_ROLE_ADMIM)
 	@PostMapping
 	public ResponseEntity<UserDTO> insert(@Valid @RequestBody UserInsertDTO dto) {
 		UserDTO userDto = service.insert(dto);

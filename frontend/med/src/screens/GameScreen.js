@@ -19,6 +19,8 @@ import {
 import CrosswordGrid from '../components/CrosswordGrid';
 import Keyboard from '../components/Keyboard';
 import { useProgress } from '../context/ProgressContext';
+import { useAuth } from '../context/AuthContext';
+import { canPlayPuzzle } from '../config/access';
 import { theme } from '../theme';
 
 /**
@@ -33,7 +35,25 @@ function sanitizeCells(cells, board) {
   return clean;
 }
 
+/**
+ * Porta de entrada da cruzadinha: se ela for Premium e o usuário não puder jogar,
+ * troca esta tela pela do Premium em vez de abrir o tabuleiro.
+ */
 export default function GameScreen({ route, navigation }) {
+  const { user } = useAuth();
+  const puzzle = getPuzzle(route.params.id);
+  const allowed = !!puzzle && canPlayPuzzle(puzzle, user);
+
+  useEffect(() => {
+    if (!allowed) navigation.replace('Premium');
+  }, [allowed, navigation]);
+
+  if (!allowed) return <View style={styles.container} />;
+  return <GameBoard route={route} navigation={navigation} />;
+}
+
+/** Tabuleiro da cruzadinha (só é exibido quando o usuário tem acesso). */
+function GameBoard({ route, navigation }) {
   const { id } = route.params;
   const puzzle = useMemo(() => getPuzzle(id), [id]);
   const board = useMemo(() => buildBoard(puzzle), [puzzle]);
