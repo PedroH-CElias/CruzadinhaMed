@@ -25,7 +25,7 @@ import { View, Text, Pressable, StyleSheet, useWindowDimensions } from 'react-na
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { CATEGORIES } from '../data/puzzles';
+import { CYCLES } from '../data/puzzles';
 import { useAuth } from '../context/AuthContext';
 import { PREMIUM_PRICE_LABEL, hasPremium } from '../config/access';
 import { theme } from '../theme';
@@ -225,9 +225,9 @@ export default function HomeScreen({ navigation }) {
 
         <Spacer flex={1.6} min={s(12)} />
 
-        {/* Rodapé com as categorias */}
+        {/* Rodapé com os ciclos (Ciclo básico • Ciclo avançado / Internato) */}
         <T style={styles.footer} numberOfLines={1} adjustsFontSizeToFit>
-          {CATEGORIES.map((c) => c.name).join('  •  ')}
+          {CYCLES.map((c) => c.name).join('  •  ')}
         </T>
       </View>
     </View>

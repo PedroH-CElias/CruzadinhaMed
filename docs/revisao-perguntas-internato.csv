@@ -1,0 +1,503 @@
+﻿Categoria;Dificuldade;Nível;Nº;Direção;Resposta;Dica;Também aparece em
+Clínica médica;Fácil;1;1;Vertical;PULSO;Onda palpável nas artérias a cada batimento;Fisiologia
+Clínica médica;Fácil;1;2;Vertical;HIPERTENSAO;Pressão arterial persistentemente elevada;Casos clínicos
+Clínica médica;Fácil;1;3;Horizontal;TOSSE;Reflexo de defesa das vias aéreas, sintoma respiratório comum;Casos clínicos
+Clínica médica;Fácil;1;4;Horizontal;FEBRE;Elevação da temperatura corporal acima do normal;Casos clínicos
+Clínica médica;Fácil;1;5;Horizontal;LUPUS;Doença autoimune que pode causar eritema em asa de borboleta;
+Clínica médica;Fácil;1;6;Horizontal;BOCIO;Aumento do volume da glândula tireoide;
+Clínica médica;Fácil;2;1;Vertical;GOTA;Artrite causada por depósito de cristais de ácido úrico;Casos clínicos
+Clínica médica;Fácil;2;2;Horizontal;DISPNEIA;Sensação de falta de ar;Casos clínicos
+Clínica médica;Fácil;2;3;Vertical;ANEMIA;Redução da hemoglobina no sangue;Casos clínicos
+Clínica médica;Fácil;2;4;Horizontal;TUBERCULOSE;Infecção causada pelo bacilo de Koch;
+Clínica médica;Fácil;2;5;Vertical;ECG;Exame que registra a atividade elétrica do coração (sigla);
+Clínica médica;Fácil;2;6;Horizontal;ALERGIA;Reação exagerada do sistema imune a uma substância;Casos clínicos
+Clínica médica;Fácil;3;1;Horizontal;GLICEMIA;Concentração de glicose no sangue;
+Clínica médica;Fácil;3;1;Vertical;GASTRITE;Inflamação da mucosa do estômago;Casos clínicos
+Clínica médica;Fácil;3;2;Vertical;CIRROSE;Fibrose avançada do fígado com nódulos de regeneração;Casos clínicos
+Clínica médica;Fácil;3;3;Vertical;ANAMNESE;Entrevista clínica com o paciente;
+Clínica médica;Fácil;3;4;Horizontal;SOPRO;Som cardíaco anormal causado por fluxo turbulento;Casos clínicos
+Clínica médica;Fácil;3;5;Horizontal;ASMA;Doença inflamatória crônica das vias aéreas, com sibilância;Casos clínicos
+Clínica médica;Fácil;4;1;Vertical;HEMOGRAMA;Exame que avalia hemácias, leucócitos e plaquetas;
+Clínica médica;Fácil;4;2;Horizontal;DIABETES;Doença marcada por glicemia elevada de forma crônica;Casos clínicos
+Clínica médica;Fácil;4;3;Vertical;ESTATINA;Classe de remédio que reduz o colesterol LDL;
+Clínica médica;Fácil;4;4;Horizontal;DISFAGIA;Dificuldade para engolir;Casos clínicos
+Clínica médica;Fácil;4;5;Horizontal;URTICARIA;Lesões elevadas e pruriginosas que somem em poucas horas;
+Clínica médica;Fácil;4;6;Horizontal;EDEMA;"Acúmulo de líquido no espaço intersticial (""inchaço"")";Casos clínicos
+Clínica médica;Médio;1;1;Vertical;POLIURIA;Aumento do volume urinário, típico da hiperglicemia;
+Clínica médica;Médio;1;2;Vertical;ASCITE;Acúmulo de líquido na cavidade peritoneal;Casos clínicos
+Clínica médica;Médio;1;3;Vertical;ANGINA;Dor torácica por isquemia do miocárdio;Casos clínicos
+Clínica médica;Médio;1;4;Horizontal;MELENA;Fezes pretas e fétidas por sangramento digestivo alto;
+Clínica médica;Médio;1;5;Horizontal;DISLIPIDEMIA;Alteração nos níveis de lipídios no sangue;
+Clínica médica;Médio;1;6;Horizontal;PROTEINURIA;Perda de proteína na urina;
+Clínica médica;Médio;1;7;Horizontal;ALBUMINA;Principal proteína do plasma, produzida pelo fígado;
+Clínica médica;Médio;2;1;Vertical;DPOC;Doença pulmonar obstrutiva crônica (sigla);
+Clínica médica;Médio;2;2;Vertical;MIXEDEMA;Edema endurecido do hipotireoidismo grave;
+Clínica médica;Médio;2;3;Vertical;VARIZES;No esôfago, são complicação da hipertensão portal;
+Clínica médica;Médio;2;4;Horizontal;TROPONINA;Marcador de lesão do músculo cardíaco;
+Clínica médica;Médio;2;5;Horizontal;HIPERCALEMIA;Potássio sérico elevado;
+Clínica médica;Médio;2;6;Horizontal;DERRAME;____ pleural: líquido entre as pleuras;
+Clínica médica;Médio;2;7;Horizontal;FIBRILACAO;____ atrial: arritmia irregular que aumenta o risco de AVC;
+Clínica médica;Médio;3;1;Horizontal;ESPIROMETRIA;Exame que mede volumes e fluxos pulmonares;
+Clínica médica;Médio;3;2;Vertical;METFORMINA;Biguanida de primeira linha no diabetes tipo 2;
+Clínica médica;Médio;3;3;Vertical;ESTEATOSE;Acúmulo de gordura nos hepatócitos;
+Clínica médica;Médio;3;4;Horizontal;HEMOPTISE;Expectoração de sangue vindo das vias aéreas;Casos clínicos
+Clínica médica;Médio;3;5;Horizontal;NEUTROPENIA;Redução dos neutrófilos no sangue;
+Clínica médica;Médio;3;6;Horizontal;SARCOIDOSE;Doença com granulomas não caseosos, sobretudo no pulmão;
+Clínica médica;Médio;3;7;Horizontal;CETOACIDOSE;Complicação aguda do diabetes, típica do tipo 1, com acidose;Casos clínicos
+Clínica médica;Médio;4;1;Vertical;CORTICOIDE;Anti-inflamatório hormonal, como a prednisona;Farmacologia
+Clínica médica;Médio;4;2;Vertical;LEVOTIROXINA;Hormônio usado na reposição do hipotireoidismo;
+Clínica médica;Médio;4;3;Vertical;XANTELASMA;Placas amareladas nas pálpebras, ligadas à dislipidemia;
+Clínica médica;Médio;4;4;Vertical;HEMODIALISE;Terapia que filtra o sangue na falência renal;
+Clínica médica;Médio;4;5;Vertical;NEFROPATIA;Lesão renal, como a causada pelo diabetes;Casos clínicos
+Clínica médica;Médio;4;6;Horizontal;CREPITANTES;Ruídos finos à ausculta, comuns na pneumonia e na congestão;
+Clínica médica;Médio;4;7;Horizontal;VARFARINA;Anticoagulante oral antagonista da vitamina K;Farmacologia
+Clínica médica;Difícil;1;1;Horizontal;CUSHING;Síndrome causada por excesso de cortisol;
+Clínica médica;Difícil;1;2;Vertical;SIADH;Secreção inapropriada de ADH que causa hiponatremia (sigla);
+Clínica médica;Difícil;1;3;Vertical;BNP;Peptídeo natriurético elevado na insuficiência cardíaca (sigla);
+Clínica médica;Difícil;1;4;Vertical;LINFOMA;"Neoplasia de linfócitos; no de Hodgkin há células de Reed-Sternberg";Casos clínicos
+Clínica médica;Difícil;1;5;Vertical;GRAVES;Doença autoimune com hipertireoidismo, bócio e exoftalmia;
+Clínica médica;Difícil;1;6;Horizontal;PLAQUETOPENIA;Redução do número de plaquetas;
+Clínica médica;Difícil;1;7;Horizontal;HASHIMOTO;Tireoidite autoimune, principal causa de hipotireoidismo;
+Clínica médica;Difícil;1;8;Horizontal;AMIODARONA;Antiarrítmico que pode alterar a tireoide e o pulmão;
+Clínica médica;Difícil;2;1;Horizontal;ASTERIXIS;"Tremor em ""bater de asas"" da encefalopatia hepática";
+Clínica médica;Difícil;2;1;Vertical;ACIDOSE;Queda do pH sanguíneo abaixo de 7,35;Fisiologia
+Clínica médica;Difícil;2;2;Vertical;DIGOXINA;Digitálico cuja toxicidade pode causar visão amarelada;Farmacologia
+Clínica médica;Difícil;2;3;Vertical;CELIACA;Doença ____: intolerância ao glúten;
+Clínica médica;Difícil;2;4;Horizontal;ADDISON;Doença por insuficiência adrenal primária;
+Clínica médica;Difícil;2;5;Vertical;MIELOMA;Neoplasia de plasmócitos com proteína M e lesões líticas;
+Clínica médica;Difícil;2;6;Horizontal;ESPONDILITE;____ anquilosante: inflamação da coluna ligada ao HLA-B27;
+Clínica médica;Difícil;2;7;Horizontal;HEPARINA;Anticoagulante injetável que potencializa a antitrombina;
+Clínica médica;Difícil;3;1;Vertical;HIPERCALCEMIA;Cálcio sérico elevado;
+Clínica médica;Difícil;3;2;Horizontal;FERRITINA;Proteína de reserva de ferro, baixa na anemia ferropriva;
+Clínica médica;Difícil;3;3;Vertical;TALASSEMIA;Defeito na síntese das cadeias de globina;
+Clínica médica;Difícil;3;4;Vertical;POLICITEMIA;"Aumento da massa de hemácias; a vera tem mutação JAK2";
+Clínica médica;Difícil;3;5;Vertical;AMILOIDOSE;Depósito de proteína em folha beta pregueada nos tecidos;
+Clínica médica;Difícil;3;6;Horizontal;WILSON;Doença do acúmulo de cobre com anel de Kayser-Fleischer;
+Clínica médica;Difícil;3;7;Vertical;NEFRITICA;Síndrome ____: hematúria, hipertensão e edema;
+Clínica médica;Difícil;3;8;Horizontal;ALCALOSE;Elevação do pH sanguíneo acima de 7,45;Fisiologia
+Clínica médica;Difícil;4;1;Horizontal;PERICARDITE;"Inflamação do pericárdio; a dor melhora ao inclinar para a frente";
+Clínica médica;Difícil;4;2;Vertical;EXOFTALMIA;Protrusão dos globos oculares;
+Clínica médica;Difícil;4;3;Horizontal;TAMPONAMENTO;Compressão do coração por líquido no pericárdio;
+Clínica médica;Difícil;4;4;Vertical;ACROMEGALIA;Excesso de GH após o fechamento das epífises;
+Clínica médica;Difícil;4;5;Vertical;MACROCITOSE;Hemácias grandes, como na deficiência de vitamina B12;
+Clínica médica;Difícil;4;6;Horizontal;NEFROTICA;Síndrome ____: proteinúria maciça, edema e hipoalbuminemia;
+Clínica médica;Difícil;4;7;Horizontal;VASCULITE;Inflamação da parede dos vasos sanguíneos;
+Clínica médica;Difícil;4;8;Horizontal;KUSSMAUL;Respiração profunda e rápida da acidose metabólica;
+Urgência e emergência;Fácil;1;1;Vertical;DESFIBRILADOR;Aparelho que aplica choque para reverter arritmias;
+Urgência e emergência;Fácil;1;2;Horizontal;SAMU;Serviço de atendimento móvel de urgência (sigla);
+Urgência e emergência;Fácil;1;3;Vertical;MACA;Leito com rodas para transportar o paciente;
+Urgência e emergência;Fácil;1;4;Vertical;PCR;Parada cardiorrespiratória (sigla);
+Urgência e emergência;Fácil;1;5;Horizontal;AVC;Acidente vascular cerebral (sigla);
+Urgência e emergência;Fácil;1;6;Horizontal;RCP;Reanimação cardiopulmonar (sigla);
+Urgência e emergência;Fácil;2;1;Vertical;COLAR;____ cervical: imobiliza o pescoço no trauma;
+Urgência e emergência;Fácil;2;2;Vertical;SUTURA;Ponto para fechar um ferimento;
+Urgência e emergência;Fácil;2;3;Vertical;TALA;Dispositivo usado para imobilizar um membro fraturado;
+Urgência e emergência;Fácil;2;4;Horizontal;MORDEDURA;Ferimento causado por dentes de animal;
+Urgência e emergência;Fácil;2;5;Horizontal;TRAUMA;Lesão causada por agente externo, como um acidente;
+Urgência e emergência;Fácil;2;6;Horizontal;DESMAIO;Nome popular da síncope;
+Urgência e emergência;Fácil;3;1;Horizontal;CURATIVO;Cobertura aplicada sobre a ferida;
+Urgência e emergência;Fácil;3;1;Vertical;CHOQUE;Má perfusão dos tecidos por falência circulatória;Casos clínicos
+Urgência e emergência;Fácil;3;2;Vertical;ASFIXIA;Falta de oxigênio por obstrução ou sufocação;
+Urgência e emergência;Fácil;3;3;Vertical;INFARTO;Necrose do músculo cardíaco por falta de sangue;Casos clínicos
+Urgência e emergência;Fácil;3;4;Vertical;ENGASGO;Obstrução das vias aéreas por corpo estranho;
+Urgência e emergência;Fácil;3;5;Horizontal;QUEIMADURA;Lesão por calor, eletricidade ou produto químico;Casos clínicos
+Urgência e emergência;Fácil;4;1;Horizontal;GLASGOW;Escala que avalia o nível de consciência;
+Urgência e emergência;Fácil;4;2;Vertical;SINCOPE;Perda transitória da consciência com recuperação espontânea;Casos clínicos
+Urgência e emergência;Fácil;4;3;Vertical;FRATURA;Quebra de um osso;Casos clínicos
+Urgência e emergência;Fácil;4;4;Horizontal;ADRENALINA;Droga de escolha na anafilaxia e na parada cardíaca;Farmacologia
+Urgência e emergência;Fácil;4;5;Horizontal;SORO;Solução intravenosa usada para hidratar o paciente;Farmacologia
+Urgência e emergência;Fácil;4;6;Horizontal;OXIGENIO;Gás ofertado por cateter ou máscara na hipoxemia;Fisiologia
+Urgência e emergência;Médio;1;1;Horizontal;SEDACAO;Redução do nível de consciência com medicamentos;
+Urgência e emergência;Médio;1;2;Vertical;ESCORPIAO;Animal cujo acidente pode causar dor intensa e, em crianças, choque;
+Urgência e emergência;Médio;1;3;Vertical;ASSISTOLIA;"Ritmo de parada sem atividade elétrica (""linha reta"")";
+Urgência e emergência;Médio;1;4;Horizontal;POLITRAUMA;Lesões graves em mais de um sistema do corpo;
+Urgência e emergência;Médio;1;5;Vertical;MANITOL;Diurético osmótico usado na hipertensão intracraniana;
+Urgência e emergência;Médio;1;6;Horizontal;HIPOTERMIA;Temperatura corporal abaixo de 35 °C;
+Urgência e emergência;Médio;1;7;Horizontal;AMBU;Bolsa-válvula-máscara usada para ventilar;
+Urgência e emergência;Médio;2;1;Vertical;HEIMLICH;Manobra de desobstrução da via aérea por compressão abdominal;
+Urgência e emergência;Médio;2;2;Vertical;ESTRIDOR;Som agudo inspiratório por obstrução da via aérea alta;
+Urgência e emergência;Médio;2;3;Horizontal;ABCDE;Sequência da avaliação inicial do paciente traumatizado;
+Urgência e emergência;Médio;2;4;Vertical;EPISTAXE;Sangramento nasal;
+Urgência e emergência;Médio;2;5;Horizontal;TROMBOLISE;Dissolução do coágulo com medicamento, como no AVC isquêmico;
+Urgência e emergência;Médio;2;6;Horizontal;CARDIOVERSAO;Choque sincronizado para reverter taquiarritmias;
+Urgência e emergência;Médio;2;7;Horizontal;TORNIQUETE;Dispositivo que contém hemorragia grave de membro;
+Urgência e emergência;Médio;3;1;Vertical;SATURACAO;Porcentagem de hemoglobina ligada ao oxigênio;Fisiologia
+Urgência e emergência;Médio;3;2;Horizontal;NALOXONA;Antídoto da intoxicação por opioides;Farmacologia
+Urgência e emergência;Médio;3;3;Vertical;ANAFILAXIA;Reação alérgica grave e sistêmica;Casos clínicos
+Urgência e emergência;Médio;3;4;Horizontal;TORACOCENTESE;Punção do tórax para retirar líquido ou ar;
+Urgência e emergência;Médio;3;5;Horizontal;HIPOVOLEMIA;Redução do volume de sangue circulante;
+Urgência e emergência;Médio;3;6;Horizontal;ATROPINA;Droga usada na bradicardia sintomática;Farmacologia
+Urgência e emergência;Médio;3;7;Horizontal;INTUBACAO;Passagem de tubo na traqueia para proteger a via aérea;
+Urgência e emergência;Médio;4;1;Vertical;PNEUMOTORAX;Presença de ar no espaço pleural;
+Urgência e emergência;Médio;4;2;Vertical;BRADICARDIA;Frequência cardíaca abaixo de 60 bpm;Casos clínicos
+Urgência e emergência;Médio;4;3;Vertical;HIPOGLICEMIA;Glicose baixa no sangue, tratada com glicose;Casos clínicos
+Urgência e emergência;Médio;4;4;Vertical;CRISTALOIDE;Tipo de solução como o soro fisiológico e o Ringer;
+Urgência e emergência;Médio;4;5;Vertical;FLUMAZENIL;Antídoto dos benzodiazepínicos;
+Urgência e emergência;Médio;4;6;Vertical;CAPNOGRAFIA;Monitorização do CO2 exalado;
+Urgência e emergência;Médio;4;7;Horizontal;NORADRENALINA;Vasopressor de escolha no choque séptico;Farmacologia
+Urgência e emergência;Difícil;1;1;Horizontal;BECK;Tríade de ____: hipotensão, turgência jugular e bulhas abafadas;
+Urgência e emergência;Difícil;1;2;Vertical;COLINERGICA;Síndrome ____: miose, sialorreia e bradicardia;
+Urgência e emergência;Difícil;1;3;Vertical;PROPOFOL;Hipnótico de ação curta que pode causar hipotensão;
+Urgência e emergência;Difícil;1;4;Horizontal;ATLS;Suporte avançado de vida no trauma (sigla);
+Urgência e emergência;Difícil;1;5;Horizontal;CIANETO;Intoxicação tratada com hidroxocobalamina;
+Urgência e emergência;Difícil;1;6;Vertical;ACLS;Suporte avançado de vida em cardiologia (sigla);
+Urgência e emergência;Difícil;1;7;Horizontal;SELLICK;Manobra de ____: compressão da cartilagem cricoide;
+Urgência e emergência;Difícil;1;8;Horizontal;TORSADES;____ de pointes: TV polimórfica associada ao QT longo;
+Urgência e emergência;Difícil;2;1;Vertical;ROCURONIO;Bloqueador neuromuscular adespolarizante usado na intubação;
+Urgência e emergência;Difícil;2;2;Vertical;MAGNESIO;Sulfato de ____: tratamento da torsades de pointes;
+Urgência e emergência;Difícil;2;3;Vertical;PRALIDOXIMA;Reativador da acetilcolinesterase nas intoxicações por organofosforados;
+Urgência e emergência;Difícil;2;4;Vertical;QSOFA;Escore rápido de beira de leito para risco na sepse;
+Urgência e emergência;Difícil;2;5;Horizontal;GLUCAGON;Usado na hipoglicemia sem acesso venoso e na intoxicação por betabloqueador;Fisiologia
+Urgência e emergência;Difícil;2;6;Vertical;MONOXIDO;____ de carbono: gás de intoxicação silenciosa em incêndios;
+Urgência e emergência;Difícil;2;7;Horizontal;ETOMIDATO;Hipnótico de intubação com pouca repercussão hemodinâmica;
+Urgência e emergência;Difícil;2;8;Horizontal;PAM;Pressão arterial média (sigla);
+Urgência e emergência;Difícil;3;1;Vertical;CROTALICO;Acidente por cascavel, com mialgia e urina escura;
+Urgência e emergência;Difícil;3;2;Horizontal;BOTROPICO;Acidente ofídico mais comum no Brasil, causado pela jararaca;
+Urgência e emergência;Difícil;3;3;Vertical;PERMISSIVA;Hipotensão ____: estratégia no trauma com sangramento ativo;
+Urgência e emergência;Difícil;3;4;Vertical;CINCINNATI;Escala pré-hospitalar para reconhecer o AVC;
+Urgência e emergência;Difícil;3;5;Horizontal;TRANEXAMICO;Ácido ____: antifibrinolítico usado no trauma com sangramento;
+Urgência e emergência;Difícil;3;6;Horizontal;ADENOSINA;Droga que reverte a taquicardia supraventricular;
+Urgência e emergência;Difícil;3;7;Horizontal;CETAMINA;Anestésico dissociativo usado na sequência rápida;
+Urgência e emergência;Difícil;3;8;Horizontal;FENTANIL;Opioide usado na analgesia e na sequência rápida de intubação;
+Urgência e emergência;Difícil;4;1;Vertical;TORAXINSTAVEL;Fratura de costelas vizinhas em dois pontos, com movimento paradoxal;
+Urgência e emergência;Difícil;4;2;Vertical;HEMOTORAX;Sangue no espaço pleural;
+Urgência e emergência;Difícil;4;3;Vertical;MIDAZOLAM;Benzodiazepínico usado na sedação e nas crises convulsivas;
+Urgência e emergência;Difícil;4;4;Horizontal;FOMEPIZOL;Antídoto da intoxicação por metanol e etilenoglicol;
+Urgência e emergência;Difícil;4;5;Vertical;FASCIOTOMIA;Cirurgia que descomprime a síndrome compartimental;
+Urgência e emergência;Difícil;4;6;Vertical;PARKLAND;Fórmula de reposição volêmica no grande queimado;
+Urgência e emergência;Difícil;4;7;Horizontal;CRICOTOMIA;Via aérea cirúrgica pela membrana cricotireóidea;
+Urgência e emergência;Difícil;4;8;Horizontal;LACTATO;Marcador de hipoperfusão tecidual dosado na sepse;Fisiologia
+Pediatria;Fácil;1;1;Vertical;RECEMNASCIDO;Bebê nos primeiros 28 dias de vida;
+Pediatria;Fácil;1;2;Horizontal;BCG;Vacina dada ao nascer contra formas graves de tuberculose (sigla);
+Pediatria;Fácil;1;3;Vertical;CAXUMBA;Infecção viral que aumenta as parótidas;
+Pediatria;Fácil;1;4;Horizontal;APGAR;Escala que avalia o recém-nascido no 1º e no 5º minuto;
+Pediatria;Fácil;1;5;Vertical;RINITE;Inflamação da mucosa nasal, com coriza e espirros;
+Pediatria;Fácil;1;6;Horizontal;OTITE;Infecção do ouvido, comum na infância;
+Pediatria;Fácil;2;1;Horizontal;COLICA;Choro intenso do lactente, comum nos primeiros meses;Casos clínicos
+Pediatria;Fácil;2;2;Vertical;CATAPORA;Nome popular da varicela;
+Pediatria;Fácil;2;3;Horizontal;PEDIATRA;Médico que cuida de crianças;
+Pediatria;Fácil;2;4;Vertical;VACINA;Imunização que protege contra doenças;Farmacologia
+Pediatria;Fácil;2;5;Horizontal;RUBEOLA;Doença exantemática prevenida pela tríplice viral;
+Pediatria;Fácil;2;6;Horizontal;ESCARLATINA;Exantema áspero com língua em framboesa, por estreptococo;
+Pediatria;Fácil;3;1;Vertical;MAMADEIRA;Recipiente usado para dar leite ao bebê;
+Pediatria;Fácil;3;2;Vertical;OLHINHO;Teste do ____: pesquisa do reflexo vermelho;
+Pediatria;Fácil;3;3;Vertical;PUERICULTURA;Acompanhamento do crescimento e do desenvolvimento da criança;
+Pediatria;Fácil;3;4;Vertical;FONTANELA;"A ""moleira"" do bebê";
+Pediatria;Fácil;3;5;Horizontal;DENTICAO;Erupção dos dentes de leite;
+Pediatria;Fácil;3;6;Horizontal;SARAMPO;Doença viral com manchas, tosse e conjuntivite;
+Pediatria;Fácil;4;1;Horizontal;PEZINHO;Teste do ____: triagem neonatal feita no calcanhar;
+Pediatria;Fácil;4;1;Vertical;PREMATURO;Bebê nascido antes de 37 semanas;
+Pediatria;Fácil;4;2;Vertical;ORELHINHA;Teste da ____: triagem auditiva neonatal;
+Pediatria;Fácil;4;3;Horizontal;PERCENTIL;Posição da criança numa curva de crescimento;
+Pediatria;Fácil;4;4;Horizontal;VERMINOSE;Infestação por parasitas intestinais;
+Pediatria;Fácil;4;5;Horizontal;FOTOTERAPIA;Tratamento com luz para a icterícia do recém-nascido;
+Pediatria;Médio;1;1;Vertical;PILORO;Estenose hipertrófica do ____: vômitos em jato no lactente;
+Pediatria;Médio;1;2;Vertical;FIMOSE;Impossibilidade de expor a glande;
+Pediatria;Médio;1;3;Horizontal;INVAGINACAO;"Alça intestinal que entra em outra; fezes em geleia de framboesa";
+Pediatria;Médio;1;4;Vertical;VSR;Vírus sincicial respiratório, principal causa de bronquiolite (sigla);
+Pediatria;Médio;1;5;Horizontal;ROSEOLA;Exantema súbito: febre alta que some e dá lugar às manchas;
+Pediatria;Médio;1;6;Horizontal;MORO;"Reflexo primitivo de ""abraço"" ao susto";
+Pediatria;Médio;1;7;Horizontal;IMPETIGO;Infecção superficial da pele com crostas melicéricas;
+Pediatria;Médio;2;1;Horizontal;ROTAVIRUS;Vírus de diarreia grave em crianças, prevenido por vacina;
+Pediatria;Médio;2;2;Vertical;ONFALITE;Infecção do coto umbilical;
+Pediatria;Médio;2;3;Vertical;SUCCAO;Reflexo do recém-nascido que permite mamar;
+Pediatria;Médio;2;4;Vertical;LACTENTE;Criança de 29 dias a 2 anos de idade;
+Pediatria;Médio;2;5;Vertical;CRUPE;Laringotraqueíte com tosse ladrante;
+Pediatria;Médio;2;6;Horizontal;PALIVIZUMABE;Anticorpo que previne VSR grave em bebês de risco;
+Pediatria;Médio;2;7;Horizontal;ENURESE;Perda involuntária de urina no sono após os 5 anos;
+Pediatria;Médio;3;1;Vertical;DESNUTRICAO;"Deficiência de nutrientes; o marasmo é uma forma grave";
+Pediatria;Médio;3;2;Horizontal;KERNICTERUS;Lesão cerebral por bilirrubina elevada no recém-nascido;
+Pediatria;Médio;3;3;Vertical;ESCABIOSE;Sarna, causada pelo Sarcoptes scabiei;
+Pediatria;Médio;3;4;Vertical;MECONIO;Primeiras fezes do recém-nascido;
+Pediatria;Médio;3;5;Horizontal;SURFACTANTE;Substância deficiente no desconforto respiratório do prematuro;
+Pediatria;Médio;3;6;Horizontal;RAQUITISMO;Falta de vitamina D com deformidades ósseas na criança;
+Pediatria;Médio;3;7;Horizontal;KAWASAKI;Vasculite infantil com febre alta e risco de aneurisma coronariano;
+Pediatria;Médio;4;1;Vertical;KWASHIORKOR;Desnutrição proteica com edema e cabelos descoloridos;
+Pediatria;Médio;4;2;Vertical;HIDROCEFALIA;Acúmulo de líquor com aumento do perímetro cefálico;
+Pediatria;Médio;4;3;Vertical;AMIGDALITE;Inflamação das amígdalas;
+Pediatria;Médio;4;4;Vertical;PARVOVIRUS;"Vírus do eritema infeccioso, a ""face esbofeteada""";
+Pediatria;Médio;4;5;Vertical;PEDICULOSE;Infestação por piolhos;
+Pediatria;Médio;4;6;Horizontal;COQUELUCHE;Tosse em acessos com guincho, causada por Bordetella;
+Pediatria;Médio;4;7;Horizontal;ESTRABISMO;Desvio no alinhamento dos olhos;
+Pediatria;Difícil;1;1;Vertical;PERTHES;Legg-Calvé-____: necrose avascular da cabeça do fêmur na infância;
+Pediatria;Difícil;1;2;Vertical;NEUROBLASTOMA;Tumor sólido extracraniano comum na infância, da crista neural;
+Pediatria;Difícil;1;3;Vertical;DUCHENNE;Distrofia muscular ligada ao X com sinal de Gowers;
+Pediatria;Difícil;1;4;Horizontal;REYE;Síndrome de ____: encefalopatia e lesão hepática ligada ao AAS;
+Pediatria;Difícil;1;5;Horizontal;TORCH;Grupo de infecções congênitas (sigla);
+Pediatria;Difícil;1;6;Vertical;GOWERS;"Sinal de ____: a criança se levanta ""escalando"" o próprio corpo";
+Pediatria;Difícil;1;7;Horizontal;WILMS;Tumor renal maligno mais comum da infância;
+Pediatria;Difícil;1;8;Horizontal;DOWN;Síndrome causada pela trissomia do 21;
+Pediatria;Difícil;2;1;Vertical;PETEQUIAS;Pontos vermelhos que não somem à pressão, alerta na febre;
+Pediatria;Difícil;2;2;Vertical;DUCTO;____ arterial: comunicação fetal entre aorta e artéria pulmonar;
+Pediatria;Difícil;2;3;Vertical;VACTERL;Associação de malformações vertebrais, anais, cardíacas e outras (sigla);
+Pediatria;Difícil;2;4;Vertical;TURNER;Síndrome 45,X com baixa estatura em meninas;
+Pediatria;Difícil;2;5;Vertical;KOPLIK;Manchas de ____: pontos brancos na mucosa oral no sarampo;
+Pediatria;Difícil;2;6;Horizontal;ENTEROCOLITE;____ necrosante: doença intestinal grave do prematuro;
+Pediatria;Difícil;2;7;Horizontal;ATRESIA;____ de esôfago: causa salivação excessiva no recém-nascido;
+Pediatria;Difícil;2;8;Horizontal;SIFILIS;____ congênita: pode causar nariz em sela e dentes de Hutchinson;
+Pediatria;Difícil;3;1;Horizontal;PUBERDADE;____ precoce: sinais antes dos 8 anos em meninas;
+Pediatria;Difícil;3;2;Vertical;EPIFISIOLISE;Escorregamento da epífise femoral proximal no adolescente;
+Pediatria;Difícil;3;3;Horizontal;LEUCOCORIA;Reflexo pupilar branco, sinal de retinoblastoma;
+Pediatria;Difícil;3;4;Horizontal;TETRALOGIA;____ de Fallot: cardiopatia cianótica mais comum;
+Pediatria;Difícil;3;5;Horizontal;HEMOFILIA;Distúrbio da coagulação ligado ao X (fator VIII ou IX);
+Pediatria;Difícil;3;5;Vertical;HENOCH;Púrpura de ____-Schönlein: vasculite por IgA;
+Pediatria;Difícil;3;6;Horizontal;ONFALOCELE;Defeito na base do umbigo, coberto por membrana;
+Pediatria;Difícil;3;7;Horizontal;TANNER;Estadiamento da puberdade;
+Pediatria;Difícil;4;1;Horizontal;FALCIFORME;Anemia ____: hemácias em foice pela hemoglobina S;
+Pediatria;Difícil;4;1;Vertical;FORCHHEIMER;Manchas no palato vistas na rubéola;
+Pediatria;Difícil;4;2;Vertical;ESFEROCITOSE;Anemia hemolítica hereditária com hemácias esféricas;
+Pediatria;Difícil;4;3;Vertical;MASTOIDITE;Complicação da otite com abaulamento atrás da orelha;
+Pediatria;Difícil;4;4;Vertical;TOXOPLASMOSE;Infecção congênita com calcificações cerebrais e coriorretinite;
+Pediatria;Difícil;4;5;Vertical;APNEIA;____ da prematuridade: pausas respiratórias no prematuro;
+Pediatria;Difícil;4;6;Horizontal;ADENOIDE;Tecido linfoide da nasofaringe que pode causar respiração oral;
+Pediatria;Difícil;4;7;Horizontal;KLINEFELTER;Síndrome cromossômica 47,XXY;
+Cirurgia geral;Fácil;1;1;Vertical;PINCA;Instrumento para segurar ou pinçar tecidos;
+Cirurgia geral;Fácil;1;2;Vertical;DRENO;Tubo para retirar secreções de uma cavidade;
+Cirurgia geral;Fácil;1;3;Vertical;CISTO;Cavidade fechada com conteúdo líquido ou pastoso;
+Cirurgia geral;Fácil;1;4;Horizontal;BISTURI;Instrumento de corte usado na cirurgia;
+Cirurgia geral;Fácil;1;5;Vertical;LUVA;Item estéril usado pela equipe cirúrgica;
+Cirurgia geral;Fácil;1;6;Horizontal;LAPAROSCOPIA;Cirurgia por pequenas incisões com uso de câmera;
+Cirurgia geral;Fácil;2;1;Vertical;DEISCENCIA;Abertura da ferida operatória;
+Cirurgia geral;Fácil;2;2;Vertical;SONDA;Tubo usado para drenar ou alimentar;
+Cirurgia geral;Fácil;2;3;Horizontal;ESTOMA;Abertura de uma víscera na pele, como na colostomia;
+Cirurgia geral;Fácil;2;4;Vertical;ANESTESIA;Bloqueio da dor durante o procedimento;
+Cirurgia geral;Fácil;2;5;Vertical;JEJUM;Período sem comer antes da cirurgia;Farmacologia
+Cirurgia geral;Fácil;2;6;Horizontal;AGULHA;Usada com o fio para suturar;
+Cirurgia geral;Fácil;3;1;Vertical;CATETER;Tubo inserido em um vaso ou cavidade;
+Cirurgia geral;Fácil;3;2;Vertical;LIPOMA;Tumor benigno de tecido gorduroso;
+Cirurgia geral;Fácil;3;3;Vertical;INCISAO;Corte cirúrgico na pele;
+Cirurgia geral;Fácil;3;4;Vertical;RETALHO;Tecido transferido com sua irrigação para cobrir um defeito;
+Cirurgia geral;Fácil;3;5;Vertical;HERNIA;Saída de víscera por uma falha da parede;
+Cirurgia geral;Fácil;3;6;Horizontal;HEMORROIDA;Dilatação dos plexos venosos do canal anal;
+Cirurgia geral;Fácil;4;1;Vertical;ASSEPSIA;Conjunto de medidas para evitar contaminação;
+Cirurgia geral;Fácil;4;2;Vertical;FISTULA;Comunicação anormal entre duas superfícies;
+Cirurgia geral;Fácil;4;3;Vertical;ENXERTO;Tecido transplantado sem pedículo vascular, como a pele;
+Cirurgia geral;Fácil;4;4;Horizontal;HEMOSTASIA;Controle do sangramento;
+Cirurgia geral;Fácil;4;5;Horizontal;COLECISTITE;Inflamação da vesícula biliar;
+Cirurgia geral;Fácil;4;6;Horizontal;VESICULA;Órgão que armazena a bile;Anatomia
+Cirurgia geral;Médio;1;1;Vertical;NISSEN;Cirurgia antirrefluxo com válvula de 360°;
+Cirurgia geral;Médio;1;2;Vertical;MURPHY;Sinal de ____: dor que interrompe a inspiração na colecistite;
+Cirurgia geral;Médio;1;3;Vertical;SEROMA;Coleção de líquido seroso na ferida operatória;
+Cirurgia geral;Médio;1;4;Horizontal;DIVERTICULITE;Inflamação de divertículos, comum no sigmoide;
+Cirurgia geral;Médio;1;5;Vertical;ILEO;____ paralítico: parada do peristaltismo;
+Cirurgia geral;Médio;1;6;Horizontal;BRIDAS;Aderências: principal causa de obstrução do intestino delgado;
+Cirurgia geral;Médio;1;7;Horizontal;MCBURNEY;Ponto clássico da dor na apendicite;
+Cirurgia geral;Médio;2;1;Vertical;ESOFAGITE;Inflamação do esôfago, como na doença do refluxo;
+Cirurgia geral;Médio;2;2;Vertical;ESTRANGULADA;Hérnia ____: com sofrimento vascular;
+Cirurgia geral;Médio;2;3;Vertical;ATELECTASIA;Colapso alveolar, causa comum de febre no pós-operatório precoce;
+Cirurgia geral;Médio;2;4;Vertical;ROVSING;Sinal: dor na fossa ilíaca direita ao comprimir a esquerda;
+Cirurgia geral;Médio;2;5;Horizontal;ACALASIA;Falha de relaxamento do esfíncter esofágico inferior;
+Cirurgia geral;Médio;2;6;Horizontal;FISSURA;____ anal: corte doloroso no canal anal;
+Cirurgia geral;Médio;2;7;Horizontal;HEMATOMA;Coleção de sangue fora dos vasos;Casos clínicos
+Cirurgia geral;Médio;3;1;Vertical;UMBILICAL;Hérnia na cicatriz do umbigo;
+Cirurgia geral;Médio;3;2;Horizontal;BLUMBERG;Sinal de dor à descompressão brusca no ponto de McBurney;
+Cirurgia geral;Médio;3;3;Vertical;GASTRECTOMIA;Retirada de parte ou de todo o estômago;
+Cirurgia geral;Médio;3;4;Vertical;HARTMANN;Cirurgia com colostomia terminal e fechamento do coto retal;
+Cirurgia geral;Médio;3;5;Vertical;COLEDOCO;Ducto biliar principal que desemboca no duodeno;
+Cirurgia geral;Médio;3;6;Horizontal;BARRETT;Esôfago de ____: metaplasia intestinal por refluxo;
+Cirurgia geral;Médio;3;7;Horizontal;VOLVO;Torção de uma alça intestinal sobre o mesentério;
+Cirurgia geral;Médio;4;1;Vertical;ESPLENECTOMIA;Retirada do baço;
+Cirurgia geral;Médio;4;2;Vertical;COLOSTOMIA;Abertura do cólon na parede abdominal;
+Cirurgia geral;Médio;4;3;Vertical;COLELITIASE;Presença de cálculos na vesícula biliar;
+Cirurgia geral;Médio;4;4;Horizontal;PILONIDAL;Cisto ____: na região sacrococcígea;
+Cirurgia geral;Médio;4;5;Vertical;PERITONITE;Inflamação do peritônio;
+Cirurgia geral;Médio;4;6;Vertical;FECALOMA;Massa endurecida de fezes no reto;
+Cirurgia geral;Médio;4;7;Horizontal;INGUINAL;Região das hérnias mais comuns;
+Cirurgia geral;Difícil;1;1;Horizontal;FAST;Ultrassom à beira do leito no trauma (sigla);
+Cirurgia geral;Difícil;1;2;Vertical;SPIEGEL;Hérnia de ____: na linha semilunar;
+Cirurgia geral;Difícil;1;3;Vertical;MIRIZZI;Síndrome de ____: cálculo comprimindo o ducto hepático comum;
+Cirurgia geral;Difícil;1;4;Vertical;CULLEN;Sinal de ____: equimose periumbilical;
+Cirurgia geral;Difícil;1;5;Vertical;LITTRE;Hérnia de ____: contém o divertículo de Meckel;
+Cirurgia geral;Difícil;1;6;Horizontal;COURVOISIER;Sinal: vesícula palpável e indolor com icterícia;
+Cirurgia geral;Difícil;1;7;Horizontal;CALOT;Triângulo de ____: referência na colecistectomia;
+Cirurgia geral;Difícil;1;8;Horizontal;KEHR;Sinal de ____: dor no ombro esquerdo na lesão do baço;
+Cirurgia geral;Difícil;2;1;Horizontal;MALLORY;Síndrome de ____-Weiss: laceração da junção esofagogástrica;
+Cirurgia geral;Difícil;2;2;Vertical;LICHTENSTEIN;Técnica de hernioplastia inguinal com tela sem tensão;
+Cirurgia geral;Difícil;2;3;Vertical;HINCHEY;Classificação da diverticulite complicada;
+Cirurgia geral;Difícil;2;4;Vertical;GREYTURNER;Sinal de equimose nos flancos na pancreatite hemorrágica;
+Cirurgia geral;Difícil;2;5;Horizontal;RICHTER;Hérnia de ____: só parte da parede da alça é pinçada;
+Cirurgia geral;Difícil;2;6;Vertical;AMYAND;Hérnia inguinal que contém o apêndice;
+Cirurgia geral;Difícil;2;7;Horizontal;MECKEL;"Divertículo de ____: conhecido pela ""regra dos 2""";
+Cirurgia geral;Difícil;2;8;Horizontal;FOURNIER;Gangrena de ____: fasciíte necrosante do períneo;
+Cirurgia geral;Difícil;3;1;Vertical;LAPAROTOMIA;Abertura cirúrgica da cavidade abdominal;
+Cirurgia geral;Difícil;3;2;Vertical;BOERHAAVE;Ruptura espontânea do esôfago após vômitos;
+Cirurgia geral;Difícil;3;3;Horizontal;CHARCOT;Tríade de ____: febre, icterícia e dor na colangite;
+Cirurgia geral;Difícil;3;4;Vertical;ZOLLINGER;Síndrome de ____-Ellison: gastrinoma com úlceras refratárias;
+Cirurgia geral;Difícil;3;5;Vertical;ALVARADO;Escore clínico para apendicite;
+Cirurgia geral;Difícil;3;6;Horizontal;PLASTRAO;Massa inflamatória bloqueada na apendicite tardia;
+Cirurgia geral;Difícil;3;7;Horizontal;GOODSALL;Regra de ____: trajeto das fístulas anais;
+Cirurgia geral;Difícil;3;8;Horizontal;DUMPING;Síndrome de ____: esvaziamento gástrico rápido após gastrectomia;
+Cirurgia geral;Difícil;4;1;Vertical;HESSELBACH;Triângulo das hérnias inguinais diretas;
+Cirurgia geral;Difícil;4;2;Horizontal;REYNOLDS;Pêntade de ____: colangite com choque e confusão mental;
+Cirurgia geral;Difícil;4;3;Horizontal;EVISCERACAO;Saída de vísceras pela ferida operatória aberta;
+Cirurgia geral;Difícil;4;4;Vertical;OGILVIE;Síndrome de ____: pseudo-obstrução aguda do cólon;
+Cirurgia geral;Difícil;4;5;Horizontal;BILLROTH;Reconstrução gástrica tipo I ou II;
+Cirurgia geral;Difícil;4;6;Horizontal;COLANGITE;Infecção das vias biliares;
+Cirurgia geral;Difícil;4;7;Horizontal;WHIPPLE;Cirurgia de gastroduodenopancreatectomia;
+Ginecologia e obstetrícia;Fácil;1;1;Vertical;GEMEOS;Dois fetos na mesma gestação;
+Ginecologia e obstetrícia;Fácil;1;2;Vertical;CLIMATERIO;Transição da vida reprodutiva para a não reprodutiva;
+Ginecologia e obstetrícia;Fácil;1;3;Vertical;UTERO;Órgão onde o feto se desenvolve;
+Ginecologia e obstetrícia;Fácil;1;4;Horizontal;OVARIO;Gônada feminina que produz óvulos e hormônios;
+Ginecologia e obstetrícia;Fácil;1;5;Horizontal;FETO;Nome do concepto a partir da 9ª semana;
+Ginecologia e obstetrícia;Fácil;1;6;Horizontal;MIOMA;Tumor benigno do músculo do útero;
+Ginecologia e obstetrícia;Fácil;2;1;Horizontal;CESAREA;Parto por incisão no abdome e no útero;
+Ginecologia e obstetrícia;Fácil;2;2;Vertical;EMBRIAO;Fase do desenvolvimento até a 8ª semana;
+Ginecologia e obstetrícia;Fácil;2;3;Vertical;BETAHCG;Hormônio dosado para confirmar a gravidez;
+Ginecologia e obstetrícia;Fácil;2;4;Vertical;PARTO;Nascimento do bebê;
+Ginecologia e obstetrícia;Fácil;2;5;Horizontal;MAMOGRAFIA;Exame de imagem para rastrear o câncer de mama;
+Ginecologia e obstetrícia;Fácil;2;6;Horizontal;CORDAO;____ umbilical: liga o feto à placenta;
+Ginecologia e obstetrícia;Fácil;3;1;Horizontal;PLACENTA;Órgão que nutre o feto e se forma na gravidez;
+Ginecologia e obstetrícia;Fácil;3;1;Vertical;PRENATAL;Acompanhamento médico durante a gravidez;
+Ginecologia e obstetrícia;Fácil;3;2;Vertical;PILULA;Anticoncepcional oral;
+Ginecologia e obstetrícia;Fácil;3;3;Horizontal;ENDOMETRIO;Camada interna do útero;
+Ginecologia e obstetrícia;Fácil;3;4;Vertical;DIU;Dispositivo intrauterino (sigla);
+Ginecologia e obstetrícia;Fácil;3;5;Horizontal;OVULACAO;Liberação do óvulo pelo ovário;
+Ginecologia e obstetrícia;Fácil;4;1;Vertical;DISMENORREIA;Cólica menstrual;
+Ginecologia e obstetrícia;Fácil;4;2;Vertical;MENOPAUSA;Última menstruação da vida;
+Ginecologia e obstetrícia;Fácil;4;3;Vertical;GESTACAO;Período da concepção ao parto;
+Ginecologia e obstetrícia;Fácil;4;4;Vertical;MENSTRUACAO;Descamação mensal do endométrio;
+Ginecologia e obstetrícia;Fácil;4;5;Horizontal;ULTRASSOM;Exame de imagem usado no pré-natal;
+Ginecologia e obstetrícia;Fácil;4;6;Horizontal;AMNIOTICO;Líquido ____: envolve e protege o feto;
+Ginecologia e obstetrícia;Médio;1;1;Vertical;HISTERECTOMIA;Retirada cirúrgica do útero;
+Ginecologia e obstetrícia;Médio;1;2;Vertical;MASTITE;Inflamação da mama, comum na amamentação;
+Ginecologia e obstetrícia;Médio;1;3;Vertical;MOLA;Gestação anômala com proliferação do trofoblasto;
+Ginecologia e obstetrícia;Médio;1;4;Horizontal;ROTURA;____ prematura das membranas: perda de líquido antes do trabalho de parto;
+Ginecologia e obstetrícia;Médio;1;5;Horizontal;SOP;Síndrome dos ovários policísticos (sigla);
+Ginecologia e obstetrícia;Médio;1;6;Vertical;PREVIA;Placenta ____: no segmento inferior, com sangramento indolor;
+Ginecologia e obstetrícia;Médio;1;7;Horizontal;ATONIA;____ uterina: principal causa de hemorragia pós-parto;
+Ginecologia e obstetrícia;Médio;2;1;Horizontal;OCITOCINA;Hormônio que estimula as contrações uterinas;
+Ginecologia e obstetrícia;Médio;2;2;Vertical;TRICOMONIASE;IST com corrimento esverdeado e bolhoso;
+Ginecologia e obstetrícia;Médio;2;3;Vertical;LAQUEADURA;Ligadura das tubas para contracepção definitiva;
+Ginecologia e obstetrícia;Médio;2;4;Horizontal;LOQUIOS;Secreção vaginal normal do puerpério;
+Ginecologia e obstetrícia;Médio;2;5;Horizontal;ECTOPICA;Gravidez fora da cavidade uterina;
+Ginecologia e obstetrícia;Médio;2;6;Vertical;HPV;Vírus associado ao câncer de colo do útero (sigla);
+Ginecologia e obstetrícia;Médio;2;7;Horizontal;PELVICA;"Apresentação ____: o bebê está ""sentado""";
+Ginecologia e obstetrícia;Médio;3;1;Vertical;ENDOMETRIOSE;Tecido endometrial fora do útero;
+Ginecologia e obstetrícia;Médio;3;2;Horizontal;AMENORREIA;Ausência de menstruação;
+Ginecologia e obstetrícia;Médio;3;3;Vertical;EPISIOTOMIA;Incisão do períneo durante o parto;
+Ginecologia e obstetrícia;Médio;3;4;Horizontal;TOCOLISE;Uso de remédios para inibir contrações prematuras;
+Ginecologia e obstetrícia;Médio;3;5;Vertical;VAGINOSE;____ bacteriana: corrimento com odor de peixe;
+Ginecologia e obstetrícia;Médio;3;6;Horizontal;GESTACIONAL;Diabetes ____: diagnosticado durante a gravidez;
+Ginecologia e obstetrícia;Médio;3;7;Horizontal;CERCLAGEM;Pontos no colo uterino na insuficiência istmocervical;
+Ginecologia e obstetrícia;Médio;4;1;Vertical;PREECLAMPSIA;Hipertensão com proteinúria após 20 semanas de gestação;
+Ginecologia e obstetrícia;Médio;4;2;Vertical;ECLAMPSIA;Convulsão em gestante com pré-eclâmpsia;
+Ginecologia e obstetrícia;Médio;4;3;Vertical;DESCOLAMENTO;____ prematuro de placenta: sangramento com dor e hipertonia;
+Ginecologia e obstetrícia;Médio;4;4;Vertical;HIRSUTISMO;Pelos em padrão masculino na mulher;
+Ginecologia e obstetrícia;Médio;4;5;Vertical;COLPOSCOPIA;Exame do colo uterino com lente de aumento;
+Ginecologia e obstetrícia;Médio;4;6;Vertical;PARTOGRAMA;Gráfico que acompanha a evolução do trabalho de parto;
+Ginecologia e obstetrícia;Médio;4;7;Horizontal;MISOPROSTOL;Prostaglandina usada para preparar o colo e induzir o parto;
+Ginecologia e obstetrícia;Difícil;1;1;Horizontal;HELLP;Síndrome com hemólise, enzimas hepáticas elevadas e plaquetopenia;
+Ginecologia e obstetrícia;Difícil;1;2;Vertical;LEOPOLD;Manobras de palpação do abdome gravídico;
+Ginecologia e obstetrícia;Difícil;1;3;Vertical;BISHOP;Índice que avalia o colo antes da indução do parto;
+Ginecologia e obstetrícia;Difícil;1;4;Vertical;FIGO;Federação que estadia os cânceres ginecológicos (sigla);
+Ginecologia e obstetrícia;Difícil;1;5;Horizontal;MEIGS;Síndrome de ____: fibroma ovariano, ascite e derrame pleural;
+Ginecologia e obstetrícia;Difícil;1;6;Vertical;NIC;Neoplasia intraepitelial cervical (sigla);
+Ginecologia e obstetrícia;Difícil;1;7;Horizontal;OLIGODRAMNIO;Redução do líquido amniótico;
+Ginecologia e obstetrícia;Difícil;1;8;Horizontal;DOPPLER;Exame do fluxo nas artérias umbilicais e uterinas;
+Ginecologia e obstetrícia;Difícil;2;1;Vertical;ASHERMAN;Aderências intrauterinas após curetagem;
+Ginecologia e obstetrícia;Difícil;2;2;Vertical;BETAMETASONA;Corticoide para maturação pulmonar fetal;
+Ginecologia e obstetrícia;Difícil;2;3;Vertical;GALACTORREIA;Saída de leite fora do período de amamentação;
+Ginecologia e obstetrícia;Difícil;2;4;Horizontal;SHEEHAN;Necrose da hipófise após hemorragia pós-parto;
+Ginecologia e obstetrícia;Difícil;2;5;Vertical;BARTHOLIN;Glândulas vulvares que podem formar cisto ou abscesso;
+Ginecologia e obstetrícia;Difícil;2;6;Horizontal;MCROBERTS;Manobra de hiperflexão das coxas na distocia de ombro;
+Ginecologia e obstetrícia;Difícil;2;7;Horizontal;BAKRI;Balão intrauterino usado na hemorragia pós-parto;
+Ginecologia e obstetrícia;Difícil;2;8;Horizontal;CONIZACAO;Retirada de um cone do colo uterino;
+Ginecologia e obstetrícia;Difícil;3;1;Vertical;DISTOCIA;Parto difícil por alteração no trajeto, no feto ou nas contrações;
+Ginecologia e obstetrícia;Difícil;3;2;Vertical;TROFOBLASTO;Camada do embrião que dá origem à placenta;
+Ginecologia e obstetrícia;Difícil;3;3;Horizontal;POLIDRAMNIO;Excesso de líquido amniótico;
+Ginecologia e obstetrícia;Difícil;3;3;Vertical;PRITCHARD;Esquema de sulfato de magnésio com doses intramusculares;
+Ginecologia e obstetrícia;Difícil;3;4;Vertical;NAEGELE;Regra para calcular a data provável do parto;
+Ginecologia e obstetrícia;Difícil;3;5;Vertical;ZUSPAN;Esquema intravenoso de sulfato de magnésio na pré-eclâmpsia grave;
+Ginecologia e obstetrícia;Difícil;3;6;Horizontal;VASAPREVIA;Vasos fetais sobre o orifício interno do colo;
+Ginecologia e obstetrícia;Difícil;3;7;Horizontal;HIDROPSIA;Acúmulo de líquido em compartimentos fetais;
+Ginecologia e obstetrícia;Difícil;4;1;Vertical;NIFEDIPINO;Bloqueador de canal de cálcio usado como tocolítico;
+Ginecologia e obstetrícia;Difícil;4;2;Vertical;KRUKENBERG;Metástase ovariana com células em anel de sinete;
+Ginecologia e obstetrícia;Difícil;4;3;Vertical;ADENOMIOSE;Endométrio dentro do miométrio, com útero aumentado e doloroso;
+Ginecologia e obstetrícia;Difícil;4;4;Vertical;ISOIMUNIZACAO;Anticorpos maternos contra hemácias fetais Rh positivo;
+Ginecologia e obstetrícia;Difícil;4;5;Vertical;LACTOGENIO;____ placentário: hormônio que aumenta a resistência à insulina;
+Ginecologia e obstetrícia;Difícil;4;6;Horizontal;ACRETISMO;Placenta anormalmente aderida ao miométrio;
+Ginecologia e obstetrícia;Difícil;4;7;Horizontal;PROLACTINOMA;Tumor hipofisário que causa galactorreia e amenorreia;
+Medicina de família e comunidade;Fácil;1;1;Horizontal;GRUPO;____ terapêutico: atividade coletiva na unidade;
+Medicina de família e comunidade;Fácil;1;2;Vertical;UBS;Unidade Básica de Saúde (sigla);
+Medicina de família e comunidade;Fácil;1;3;Horizontal;SEDENTARISMO;Falta de atividade física regular;
+Medicina de família e comunidade;Fácil;1;3;Vertical;SUS;Sistema Único de Saúde (sigla);
+Medicina de família e comunidade;Fácil;1;4;Vertical;ACS;Agente comunitário de saúde (sigla);
+Medicina de família e comunidade;Fácil;1;5;Horizontal;SAUDE;Bem-estar físico, mental e social, segundo a OMS;
+Medicina de família e comunidade;Fácil;2;1;Vertical;FAMILIA;Estratégia Saúde da ____;
+Medicina de família e comunidade;Fácil;2;2;Vertical;VINCULO;Relação de confiança entre equipe e paciente;
+Medicina de família e comunidade;Fácil;2;3;Horizontal;VACINACAO;Ação preventiva registrada na caderneta;
+Medicina de família e comunidade;Fácil;2;3;Vertical;VISITA;____ domiciliar: atendimento na casa do paciente;
+Medicina de família e comunidade;Fácil;2;4;Horizontal;HIGIENE;Cuidados de limpeza para prevenir doenças;
+Medicina de família e comunidade;Fácil;2;5;Horizontal;RASTREAMENTO;Busca de doença em pessoas sem sintomas;
+Medicina de família e comunidade;Fácil;3;1;Horizontal;EPIDEMIA;Aumento de casos acima do esperado;
+Medicina de família e comunidade;Fácil;3;1;Vertical;EDUCACAO;____ em saúde: ações para informar e empoderar a comunidade;
+Medicina de família e comunidade;Fácil;3;2;Vertical;PROMOCAO;____ da saúde: estímulo a hábitos saudáveis;
+Medicina de família e comunidade;Fácil;3;3;Horizontal;PREVENCAO;Ações para evitar que a doença aconteça;
+Medicina de família e comunidade;Fácil;3;4;Horizontal;ACOLHIMENTO;Escuta e recepção do usuário na unidade;
+Medicina de família e comunidade;Fácil;3;5;Horizontal;TABAGISMO;Dependência de nicotina, alvo de programa de cessação;
+Medicina de família e comunidade;Fácil;4;1;Vertical;PRONTUARIO;Registro das informações do paciente;
+Medicina de família e comunidade;Fácil;4;2;Vertical;HIPERDIA;Programa de cuidado de hipertensos e diabéticos;
+Medicina de família e comunidade;Fácil;4;3;Horizontal;ECOMAPA;Diagrama das relações da família com a comunidade;
+Medicina de família e comunidade;Fácil;4;3;Vertical;EQUIDADE;Princípio do SUS: tratar desigualmente os desiguais;
+Medicina de família e comunidade;Fácil;4;4;Vertical;ENDEMIA;Doença presente de forma constante em uma região;
+Medicina de família e comunidade;Fácil;4;5;Horizontal;GENOGRAMA;Representação gráfica da família;
+Medicina de família e comunidade;Médio;1;1;Vertical;MATRICIAMENTO;Apoio especializado compartilhado com a equipe;
+Medicina de família e comunidade;Médio;1;2;Horizontal;CAGE;Questionário de quatro perguntas sobre consumo de álcool;
+Medicina de família e comunidade;Médio;1;3;Vertical;APS;Atenção primária à saúde (sigla);
+Medicina de família e comunidade;Médio;1;4;Horizontal;CIAP;Classificação internacional de atenção primária (sigla);
+Medicina de família e comunidade;Médio;1;5;Horizontal;CAPS;Centro de atenção psicossocial (sigla);
+Medicina de família e comunidade;Médio;1;6;Horizontal;ESF;Estratégia Saúde da Família (sigla);
+Medicina de família e comunidade;Médio;1;7;Horizontal;SOAP;Registro: subjetivo, objetivo, avaliação e plano;
+Medicina de família e comunidade;Médio;2;1;Horizontal;NASF;Núcleo de apoio à saúde da família (sigla);
+Medicina de família e comunidade;Médio;2;2;Vertical;SANGUEOCULTO;Pesquisa de ____ nas fezes: rastreio do câncer colorretal;
+Medicina de família e comunidade;Médio;2;3;Vertical;STARFIELD;Autora dos atributos essenciais da atenção primária;
+Medicina de família e comunidade;Médio;2;4;Vertical;CADERNETA;Documento de acompanhamento da criança ou da gestante;
+Medicina de família e comunidade;Médio;2;5;Vertical;CHAGAS;Doença transmitida pelo barbeiro;
+Medicina de família e comunidade;Médio;2;6;Horizontal;EQUIPE;____ multiprofissional da Saúde da Família;
+Medicina de família e comunidade;Médio;2;7;Horizontal;AUDIT;Questionário da OMS de rastreio do uso de álcool;
+Medicina de família e comunidade;Médio;3;1;Vertical;DETERMINANTES;____ sociais da saúde: condições de vida que influenciam a saúde;
+Medicina de família e comunidade;Médio;3;2;Vertical;LEISHMANIOSE;Doença transmitida pelo flebotomíneo;
+Medicina de família e comunidade;Médio;3;3;Horizontal;REFERENCIA;Encaminhamento para outro nível de atenção;
+Medicina de família e comunidade;Médio;3;4;Vertical;INCIDENCIA;Casos novos de uma doença num período;
+Medicina de família e comunidade;Médio;3;5;Vertical;ADSCRICAO;Vinculação da população a uma equipe de saúde;
+Medicina de família e comunidade;Médio;3;6;Vertical;ALMAATA;Conferência de 1978 sobre cuidados primários de saúde;
+Medicina de família e comunidade;Médio;3;7;Horizontal;VIGILANCIA;____ epidemiológica: monitora doenças na população;
+Medicina de família e comunidade;Médio;4;1;Vertical;COORDENACAO;Atributo da APS de organizar o cuidado na rede;
+Medicina de família e comunidade;Médio;4;2;Vertical;QUATERNARIA;Prevenção ____: evita intervenções desnecessárias;
+Medicina de família e comunidade;Médio;4;3;Horizontal;AUTOCUIDADO;Ações da própria pessoa para cuidar da saúde;
+Medicina de família e comunidade;Médio;4;4;Horizontal;HANSENIASE;Doença com manchas hipoestésicas, causada por M. leprae;
+Medicina de família e comunidade;Médio;4;5;Horizontal;PREVALENCIA;Proporção de casos existentes numa população;
+Medicina de família e comunidade;Médio;4;6;Horizontal;POLIFARMACIA;Uso de muitos medicamentos ao mesmo tempo;
+Medicina de família e comunidade;Médio;4;7;Horizontal;NOTIFICACAO;Comunicação obrigatória de certas doenças à vigilância;
+Medicina de família e comunidade;Difícil;1;1;Horizontal;VPP;Valor preditivo positivo (sigla);
+Medicina de família e comunidade;Difícil;1;2;Vertical;PPD;Prova tuberculínica (sigla);
+Medicina de família e comunidade;Difícil;1;3;Vertical;PNAB;Política Nacional de Atenção Básica (sigla);
+Medicina de família e comunidade;Difícil;1;4;Vertical;SIFE;Sentimentos, ideias, funcionamento e expectativas (sigla);
+Medicina de família e comunidade;Difícil;1;5;Vertical;VIES;Erro sistemático em um estudo;
+Medicina de família e comunidade;Difícil;1;6;Vertical;FIRO;Modelo das orientações fundamentais nas relações interpessoais (sigla);
+Medicina de família e comunidade;Difícil;1;7;Horizontal;SENSIBILIDADE;Capacidade de um teste de detectar os doentes;
+Medicina de família e comunidade;Difícil;1;8;Horizontal;BEERS;Critérios de ____: medicamentos potencialmente inapropriados para idosos;
+Medicina de família e comunidade;Difícil;2;1;Horizontal;DUVALL;Autora do modelo do ciclo de vida familiar;
+Medicina de família e comunidade;Difícil;2;1;Vertical;DEMORA;____ permitida: observar a evolução antes de intervir;
+Medicina de família e comunidade;Difícil;2;2;Horizontal;MCCP;Método clínico centrado na pessoa (sigla);
+Medicina de família e comunidade;Difícil;2;3;Vertical;CASOCONTROLE;Estudo que parte do desfecho e investiga exposições passadas;
+Medicina de família e comunidade;Difícil;2;4;Vertical;RANDOMIZACAO;Alocação aleatória dos participantes de um ensaio;
+Medicina de família e comunidade;Difícil;2;5;Vertical;CONFUSAO;Viés de ____: fator ligado à exposição e ao desfecho;
+Medicina de família e comunidade;Difícil;2;6;Horizontal;NNT;Número necessário para tratar (sigla);
+Medicina de família e comunidade;Difícil;2;7;Horizontal;ACESSO;Atributo da APS: ____ de primeiro contato;
+Medicina de família e comunidade;Difícil;3;1;Horizontal;CONSELHOS;Instâncias de participação popular no SUS, junto às conferências;
+Medicina de família e comunidade;Difícil;3;2;Vertical;SPIKES;Protocolo para comunicar más notícias;
+Medicina de família e comunidade;Difícil;3;3;Vertical;LONGITUDINAL;Cuidado ____: acompanhamento da pessoa ao longo do tempo;
+Medicina de família e comunidade;Difícil;3;4;Horizontal;MCWHINNEY;Autor dos princípios da medicina de família;
+Medicina de família e comunidade;Difícil;3;5;Vertical;CALGARY;Modelo ____-Cambridge de comunicação na consulta;
+Medicina de família e comunidade;Difícil;3;6;Vertical;PRACTICE;Ferramenta de avaliação familiar (acrônimo em inglês);
+Medicina de família e comunidade;Difícil;3;7;Horizontal;BALINT;Grupos de ____: reflexão sobre a relação médico-paciente;
+Medicina de família e comunidade;Difícil;3;8;Horizontal;METANALISE;Síntese estatística dos resultados de vários estudos;
+Medicina de família e comunidade;Difícil;4;1;Vertical;TRANSVERSAL;Estudo que mede exposição e desfecho no mesmo momento;
+Medicina de família e comunidade;Difícil;4;2;Horizontal;EVIDENCIA;Medicina baseada em ____: pesquisa, experiência e valores do paciente;
+Medicina de família e comunidade;Difícil;4;3;Vertical;CUIDADOR;Pessoa que assume os cuidados de alguém dependente;
+Medicina de família e comunidade;Difícil;4;4;Vertical;KARNOFSKY;Escala de funcionalidade usada em cuidados paliativos;
+Medicina de família e comunidade;Difícil;4;5;Horizontal;APGARFAMILIAR;Instrumento que avalia a satisfação com a funcionalidade da família;
+Medicina de família e comunidade;Difícil;4;6;Vertical;COORTE;Estudo que acompanha expostos e não expostos ao longo do tempo;
+Medicina de família e comunidade;Difícil;4;7;Horizontal;PALIATIVO;Cuidado ____: foco no alívio do sofrimento;
+Medicina de família e comunidade;Difícil;4;8;Horizontal;ECOLOGICO;Estudo ____: analisa populações, não indivíduos;

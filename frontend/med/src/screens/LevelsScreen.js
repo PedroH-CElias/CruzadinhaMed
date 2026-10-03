@@ -26,7 +26,9 @@ export default function LevelsScreen({ route, navigation }) {
         <Pressable onPress={() => navigation.goBack()} hitSlop={12}>
           <Text style={styles.back}>‹ Categorias</Text>
         </Pressable>
-        <Text style={styles.title}>{category.name}</Text>
+        <Text style={styles.title} numberOfLines={1} adjustsFontSizeToFit>
+          {category.name}
+        </Text>
         <View style={{ width: 92 }} />
       </View>
 
@@ -118,7 +120,7 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   back: { color: theme.colors.textMuted, fontSize: 16, width: 92 },
-  title: { color: theme.colors.text, fontSize: 18, fontWeight: '800' },
+  title: { color: theme.colors.text, fontSize: 18, fontWeight: '800', flex: 1, textAlign: 'center' },
   section: { marginBottom: 22 },
   sectionHeader: {
     flexDirection: 'row',

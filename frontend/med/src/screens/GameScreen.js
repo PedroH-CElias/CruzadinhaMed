@@ -208,7 +208,9 @@ function GameBoard({ route, navigation }) {
           <Text style={styles.back}>‹ Voltar</Text>
         </Pressable>
         <View style={styles.headerCenter}>
-          <Text style={styles.headerTitle}>{puzzle.categoryName}</Text>
+          <Text style={styles.headerTitle} numberOfLines={1} adjustsFontSizeToFit>
+            {puzzle.categoryName}
+          </Text>
           <Text style={styles.progress}>
             {puzzle.difficultyName} · Nível {puzzle.level} · {solvedCount}/
             {board.entries.length}
@@ -304,7 +306,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   back: { color: theme.colors.textMuted, fontSize: 16, width: 70 },
-  headerCenter: { alignItems: 'center' },
+  headerCenter: { alignItems: 'center', flex: 1 },
   headerTitle: { color: theme.colors.text, fontSize: 17, fontWeight: '800' },
   progress: { color: theme.colors.textMuted, fontSize: 12, marginTop: 2 },
   hint: { color: theme.colors.primary, fontSize: 15, fontWeight: '700', width: 70, textAlign: 'right' },
