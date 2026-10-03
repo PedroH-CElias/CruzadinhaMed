@@ -88,20 +88,26 @@ export default function HomeScreen({ navigation }) {
       ]}
     >
       <View style={styles.content}>
-        {/* Topo: só aparece logado ("Olá, nome", que abre Minha conta) */}
+        {/* Topo: só aparece logado. Saudação à esquerda e avatar à direita; tudo abre Minha conta */}
         <View style={styles.topBar}>
           {isAuthenticated ? (
             <Pressable
-              style={({ pressed }) => [styles.accountButton, pressed && { opacity: 0.7 }]}
+              style={({ pressed }) => [styles.accountButton, pressed && { opacity: 0.8 }]}
               onPress={() => navigation.navigate('Account')}
-              hitSlop={10}
+              hitSlop={8}
               accessibilityRole="button"
               accessibilityLabel="Abrir minha conta"
             >
-              <MaterialCommunityIcons name="account-circle-outline" size={s(18)} color={theme.colors.textMuted} />
-              <T style={styles.accountText} numberOfLines={1}>
-                Olá, {firstName}
-              </T>
+              <View style={{ flex: 1 }}>
+                <T style={styles.greeting} numberOfLines={1}>
+                  Olá, <T style={styles.greetingName}>{firstName}</T>
+                </T>
+                <T style={styles.greetingSub}>Bons estudos!</T>
+              </View>
+              {/* Avatar com a inicial do nome */}
+              <View style={styles.avatar}>
+                <T style={styles.avatarText}>{firstName?.charAt(0)?.toUpperCase() ?? '?'}</T>
+              </View>
             </Pressable>
           ) : null}
         </View>
@@ -256,9 +262,32 @@ function createStyles(scale) {
     content: { flex: 1, width: '100%', maxWidth: MAX_CONTENT_WIDTH, paddingHorizontal: s(22) },
 
     // Topo
-    topBar: { flexDirection: 'row', justifyContent: 'flex-end', minHeight: s(32) },
-    accountButton: { flexDirection: 'row', alignItems: 'center', gap: s(6), maxWidth: '60%' },
-    accountText: { color: theme.colors.textMuted, fontSize: s(14), fontWeight: '700' },
+    // marginTop afasta o cartão "Olá, nome" do topo da tela
+    topBar: { minHeight: s(32), marginTop: s(22) },
+    accountButton: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: s(12),
+      backgroundColor: theme.colors.bgSoft,
+      borderWidth: 1,
+      borderColor: theme.colors.cardBorder,
+      borderRadius: theme.radius.lg,
+      paddingVertical: s(10),
+      paddingLeft: s(16),
+      paddingRight: s(10),
+    },
+    greeting: { color: theme.colors.text, fontSize: s(20), fontWeight: '700' },
+    greetingName: { color: ACCENT, fontWeight: '900' },
+    greetingSub: { color: theme.colors.textMuted, fontSize: s(13), marginTop: s(1) },
+    avatar: {
+      width: s(44),
+      height: s(44),
+      borderRadius: s(22),
+      backgroundColor: ACCENT,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    avatarText: { color: '#fff', fontSize: s(19), fontWeight: '900' },
 
     // Logo
     logoRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center' },

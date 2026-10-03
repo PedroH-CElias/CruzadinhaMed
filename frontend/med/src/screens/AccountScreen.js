@@ -1,15 +1,20 @@
 /**
  * Tela "Minha conta" (aberta ao tocar no "Olá, {nome}" da Home).
  *
- * Mostra os dados do usuário e permite sair ou excluir a conta.
+ * - Cabeçalho com avatar, nome e e-mail.
+ * - Atalhos: "Meus dados" (nome e senha) e "Assinatura" (situação do Premium).
+ * - Sair da conta e Excluir conta.
+ *
  * A exclusão é exigida pela Apple (regra 5.1.1(v)) e pelo Google Play: precisa estar
  * disponível dentro do app. Ela pede a senha como confirmação e é definitiva.
  */
 import React, { useEffect, useState } from 'react';
 import { View, Text, Pressable, ScrollView, StyleSheet, Linking } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import FormInput from '../components/FormInput';
 import PrimaryButton from '../components/PrimaryButton';
+import ScreenHeader from '../components/ScreenHeader';
 import { useAuth } from '../context/AuthContext';
 import { getErrorMessage, LEGAL_URLS } from '../services/api';
 import { hasPremium } from '../config/access';
@@ -39,6 +44,11 @@ export default function AccountScreen({ navigation }) {
   const premiumUntil = user.premiumUntil
     ? new Date(user.premiumUntil).toLocaleDateString('pt-BR')
     : null;
+  const subscriptionLabel = premiumActive
+    ? premiumUntil
+      ? `Premium ativo até ${premiumUntil}`
+      : 'Premium ativo'
+    : 'Assinatura inativa';
 
   async function handleSignOut() {
     setSigningOut(true);
@@ -69,13 +79,7 @@ export default function AccountScreen({ navigation }) {
 
   return (
     <View style={[styles.container, { paddingTop: insets.top + 8 }]}>
-      <View style={styles.header}>
-        <Pressable onPress={() => navigation.goBack()} hitSlop={12} accessibilityRole="button">
-          <Text style={styles.back}>‹ Início</Text>
-        </Pressable>
-        <Text style={styles.title}>Minha conta</Text>
-        <View style={{ width: 60 }} />
-      </View>
+      <ScreenHeader title="Minha conta" backLabel="Início" onBack={() => navigation.goBack()} />
 
       <ScrollView
         contentContainerStyle={{ padding: 16, paddingBottom: insets.bottom + 24 }}
@@ -93,24 +97,23 @@ export default function AccountScreen({ navigation }) {
           </View>
         </View>
 
-        {/* Assinatura */}
-        <Pressable
-          style={[styles.planCard, !premiumActive && styles.planInactive]}
-          onPress={premiumActive ? undefined : () => navigation.navigate('Premium')}
-          disabled={premiumActive}
-          accessibilityRole={premiumActive ? undefined : 'button'}
-        >
-          <Text style={styles.planTitle}>
-            {premiumActive ? 'Premium ativo' : 'Assinatura inativa'}
-          </Text>
-          <Text style={styles.planText}>
-            {premiumActive
-              ? premiumUntil
-                ? `Válido até ${premiumUntil}.`
-                : 'Todas as cruzadinhas liberadas.'
-              : 'Você tem acesso só às cruzadinhas grátis. Toque para renovar.'}
-          </Text>
-        </Pressable>
+        {/* Atalhos */}
+        <View style={styles.menu}>
+          <MenuItem
+            icon="account-edit-outline"
+            title="Meus dados"
+            subtitle="Alterar nome e senha"
+            onPress={() => navigation.navigate('Profile')}
+          />
+          <View style={styles.divider} />
+          <MenuItem
+            icon="crown-outline"
+            title="Assinatura"
+            subtitle={subscriptionLabel}
+            subtitleColor={premiumActive ? theme.colors.solved : theme.colors.error}
+            onPress={() => navigation.navigate('Subscription')}
+          />
+        </View>
 
         <PrimaryButton
           title="Sair da conta"
@@ -189,17 +192,30 @@ export default function AccountScreen({ navigation }) {
   );
 }
 
+/** Item da lista de atalhos (ícone, título, subtítulo e seta). */
+function MenuItem({ icon, title, subtitle, subtitleColor, onPress }) {
+  return (
+    <Pressable
+      style={({ pressed }) => [styles.menuItem, pressed && { opacity: 0.7 }]}
+      onPress={onPress}
+      accessibilityRole="button"
+    >
+      <View style={styles.menuIcon}>
+        <MaterialCommunityIcons name={icon} size={22} color={theme.colors.primary} />
+      </View>
+      <View style={{ flex: 1 }}>
+        <Text style={styles.menuTitle}>{title}</Text>
+        <Text style={[styles.menuSubtitle, subtitleColor && { color: subtitleColor }]} numberOfLines={1}>
+          {subtitle}
+        </Text>
+      </View>
+      <MaterialCommunityIcons name="chevron-right" size={24} color={theme.colors.textMuted} />
+    </Pressable>
+  );
+}
+
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: theme.colors.bg },
-  header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingHorizontal: 16,
-    marginBottom: 4,
-  },
-  back: { color: theme.colors.textMuted, fontSize: 16, width: 60 },
-  title: { color: theme.colors.text, fontSize: 18, fontWeight: '800' },
   profileCard: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -222,21 +238,30 @@ const styles = StyleSheet.create({
   avatarText: { color: '#fff', fontSize: 22, fontWeight: '900' },
   name: { color: theme.colors.text, fontSize: 18, fontWeight: '800' },
   email: { color: theme.colors.textMuted, fontSize: 14, marginTop: 2 },
-  signOut: { marginBottom: 28 },
-  planCard: {
-    borderRadius: theme.radius.md,
+
+  // Atalhos
+  menu: {
+    backgroundColor: theme.colors.card,
+    borderRadius: theme.radius.lg,
     borderWidth: 1,
-    borderColor: theme.colors.solvedBorder + '88',
-    backgroundColor: theme.colors.solved + '1A',
-    padding: 14,
-    marginBottom: 16,
+    borderColor: theme.colors.cardBorder,
+    marginBottom: 20,
+    overflow: 'hidden',
   },
-  planInactive: {
-    borderColor: theme.colors.error + '66',
-    backgroundColor: theme.colors.error + '14',
+  menuItem: { flexDirection: 'row', alignItems: 'center', gap: 12, padding: 14 },
+  menuIcon: {
+    width: 40,
+    height: 40,
+    borderRadius: 12,
+    backgroundColor: theme.colors.primary + '22',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  planTitle: { color: theme.colors.text, fontSize: 15, fontWeight: '800' },
-  planText: { color: theme.colors.textMuted, fontSize: 13, marginTop: 4 },
+  menuTitle: { color: theme.colors.text, fontSize: 16, fontWeight: '800' },
+  menuSubtitle: { color: theme.colors.textMuted, fontSize: 13, marginTop: 2 },
+  divider: { height: 1, backgroundColor: theme.colors.cardBorder, marginLeft: 66 },
+
+  signOut: { marginBottom: 28 },
   dangerCard: {
     borderRadius: theme.radius.lg,
     borderWidth: 1,

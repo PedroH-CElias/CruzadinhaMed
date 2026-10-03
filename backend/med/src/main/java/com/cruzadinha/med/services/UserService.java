@@ -162,9 +162,9 @@ public class UserService implements UserDetailsService {
 		return new UserDTO(user);
 	}
 
+	// Só o nome é editável pelo próprio usuário
 	private void copyUserProfileDtoToEntity(UserProfileUpdateDTO dto, User user) {
-		user.setName(dto.getName());
-		user.setPhone(dto.getPhone());
+		user.setName(dto.getName().trim());
 	}
 
 	private User save(User user) {

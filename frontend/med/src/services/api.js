@@ -241,6 +241,20 @@ export function getMe() {
   return request('/users/me', { auth: true });
 }
 
+/** Altera os dados do perfil (hoje, só o nome). Devolve o usuário atualizado. */
+export function updateProfile({ name }) {
+  return request('/users/me', { method: 'PATCH', body: { name: name.trim() }, auth: true });
+}
+
+/** Troca a senha. Senha atual errada gera ApiError 422. */
+export function changePassword({ currentPassword, newPassword }) {
+  return request('/users/me/password', {
+    method: 'PATCH',
+    body: { currentPassword, newPassword },
+    auth: true,
+  });
+}
+
 /**
  * Exclui definitivamente a conta do usuário logado. A senha é pedida como confirmação:
  * senha errada gera ApiError 422. Em caso de sucesso, os tokens locais são apagados.

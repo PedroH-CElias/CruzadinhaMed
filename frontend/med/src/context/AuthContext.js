@@ -107,6 +107,18 @@ export function AuthProvider({ children }) {
     [becomeGuest, runSessionEndHandlers]
   );
 
+  /** Altera o nome do usuário e atualiza os dados exibidos no app. */
+  const updateProfile = useCallback(async ({ name }) => {
+    const updated = await api.updateProfile({ name });
+    setUser(updated);
+  }, []);
+
+  /** Troca a senha do usuário logado (pede a senha atual). */
+  const changePassword = useCallback(
+    ({ currentPassword, newPassword }) => api.changePassword({ currentPassword, newPassword }),
+    []
+  );
+
   /** Redefine a senha com o código recebido por e-mail e já entra com a nova senha. */
   const resetPassword = useCallback(
     async ({ email, code, newPassword }) => {
@@ -126,9 +138,11 @@ export function AuthProvider({ children }) {
       signOut,
       deleteAccount,
       resetPassword,
+      updateProfile,
+      changePassword,
       registerSessionEndHandler,
     }),
-    [status, user, signIn, signUp, signOut, deleteAccount, resetPassword, registerSessionEndHandler]
+    [status, user, signIn, signUp, signOut, deleteAccount, resetPassword, updateProfile, changePassword, registerSessionEndHandler]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

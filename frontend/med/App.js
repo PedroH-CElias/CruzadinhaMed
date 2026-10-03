@@ -15,6 +15,8 @@ import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
 import ResetPasswordScreen from './src/screens/ResetPasswordScreen';
 import AccountScreen from './src/screens/AccountScreen';
 import PremiumScreen from './src/screens/PremiumScreen';
+import ProfileScreen from './src/screens/ProfileScreen';
+import SubscriptionScreen from './src/screens/SubscriptionScreen';
 import { AuthProvider, useAuth } from './src/context/AuthContext';
 import { ProgressProvider, useProgress } from './src/context/ProgressContext';
 import { theme } from './src/theme';
@@ -70,6 +72,8 @@ function RootNavigator() {
         <Stack.Screen name="Levels" component={LevelsScreen} />
         <Stack.Screen name="Game" component={GameScreen} />
         <Stack.Screen name="Account" component={AccountScreen} />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen name="Subscription" component={SubscriptionScreen} />
 
         {/* Telas de autenticação, abertas como modal por cima do jogo */}
         <Stack.Group screenOptions={{ presentation: 'modal', animation: 'slide_from_bottom' }}>
