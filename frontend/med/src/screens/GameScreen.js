@@ -181,15 +181,57 @@ function GameBoard({ route, navigation }) {
     }
   }, [activeCell, values, cellIndex, wordCells]);
 
-  const revealWord = () => {
+  // Mensagem curta exibida na barra da pista (ex.: quando a dica não pode ser usada)
+  const [hintMessage, setHintMessage] = useState('');
+  const hintTimer = useRef(null);
+  useEffect(() => () => clearTimeout(hintTimer.current), []);
+
+  /** Mostra uma mensagem na barra da pista por alguns segundos. */
+  const flashHintMessage = (message) => {
+    clearTimeout(hintTimer.current);
+    setHintMessage(message);
+    hintTimer.current = setTimeout(() => setHintMessage(''), 2500);
+  };
+
+  /**
+   * Dica: revela ALGUMAS letras da palavra selecionada, em posições sorteadas entre as
+   * que ainda estão vazias ou erradas.
+   * - Palavras com até 5 letras: 2 letras por dica; com 6 ou mais: 3 letras por dica.
+   * - A dica nunca completa a palavra: sempre deixa pelo menos 1 letra para o jogador.
+   */
+  const revealHint = () => {
     if (!activeEntry) return;
-    // Só conta como dica se a palavra ainda não estava certa
-    if (!isEntrySolved(activeEntry, values)) setHintsUsed((h) => h + 1);
+    const cells = cellsForEntry(activeEntry);
+
+    // Posições da palavra que ainda não estão com a letra certa
+    const missing = cells
+      .map((c, i) => ({ key: `${c.row}-${c.col}`, i }))
+      .filter(({ key, i }) => values[key] !== activeEntry.answer[i]);
+
+    if (missing.length === 0) {
+      flashHintMessage('Essa palavra já está certa.');
+      return;
+    }
+    const perHint = activeEntry.answer.length <= 5 ? 2 : 3;
+    const amount = Math.min(perHint, missing.length - 1); // sobra ao menos 1 letra
+    if (amount <= 0) {
+      flashHintMessage('Falta só uma letra: essa é com você!');
+      return;
+    }
+
+    // Sorteia as posições que serão reveladas
+    const shuffled = [...missing].sort(() => Math.random() - 0.5).slice(0, amount);
     const updates = {};
-    cellsForEntry(activeEntry).forEach((c, i) => {
-      updates[`${c.row}-${c.col}`] = activeEntry.answer[i];
+    shuffled.forEach(({ key, i }) => {
+      updates[key] = activeEntry.answer[i];
     });
-    setValues((v) => ({ ...v, ...updates }));
+    const nextValues = { ...values, ...updates };
+    setValues(nextValues);
+    setHintsUsed((h) => h + 1);
+
+    // Leva o cursor para a primeira letra que ainda falta
+    const firstMissing = cells.findIndex((c, i) => nextValues[`${c.row}-${c.col}`] !== activeEntry.answer[i]);
+    if (firstMissing >= 0) setCellIndex(firstMissing);
   };
 
   const entrySolved = activeEntry && isEntrySolved(activeEntry, values);
@@ -217,7 +259,7 @@ function GameBoard({ route, navigation }) {
             {saved?.completed ? ' · ✓' : ''}
           </Text>
         </View>
-        <Pressable onPress={revealWord} hitSlop={12}>
+        <Pressable onPress={revealHint} hitSlop={12}>
           <Text style={styles.hint}>Dica</Text>
         </Pressable>
       </View>
@@ -265,9 +307,9 @@ function GameBoard({ route, navigation }) {
             </Pressable>
             <Pressable
               style={styles.doneBtn}
-              onPress={() => navigation.navigate('Categories')}
+              onPress={() => navigation.goBack()}
             >
-              <Text style={styles.doneBtnText}>Escolher outra</Text>
+              <Text style={styles.doneBtnText}>Finalizar</Text>
             </Pressable>
           </View>
         </View>
@@ -282,6 +324,8 @@ function GameBoard({ route, navigation }) {
               {entrySolved ? '  ✓' : ''}
             </Text>
             <Text style={styles.clueText}>{activeEntry?.clue}</Text>
+            {/* Aviso temporário da dica (ex.: "Falta só uma letra") */}
+            {hintMessage ? <Text style={styles.hintMessage}>{hintMessage}</Text> : null}
           </Pressable>
           <Pressable onPress={() => goToEntry(1)} hitSlop={10}>
             <Text style={styles.arrow}>›</Text>
@@ -338,6 +382,7 @@ const styles = StyleSheet.create({
   arrow: { color: theme.colors.primary, fontSize: 30, paddingHorizontal: 10, fontWeight: '700' },
   clueTextWrap: { flex: 1, paddingHorizontal: 4 },
   clueLabel: { color: theme.colors.textMuted, fontSize: 12, fontWeight: '700', marginBottom: 2 },
+  hintMessage: { color: theme.colors.primary, fontSize: 12, fontWeight: '700', marginTop: 4 },
   clueText: { color: theme.colors.text, fontSize: 15, lineHeight: 20 },
   doneBanner: {
     backgroundColor: theme.colors.card,
